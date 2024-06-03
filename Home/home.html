@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+            <style>
+                *{
+                    padding: 0;
+                    margin: 0;
+                    box-sizing: border-box;
+                }
+                .nav-tabs{
+                    border: none;
+                    --bs-nav-tabs-link-active-color: rgb(138, 71, 71);
+                    --bs-nav-tabs-link-active-bg: antiquewhite;
+                    --bs-nav-tabs-border-color: antiquewhite;
+                    
+                }
+                a.nav-link{
+                    color: black;
+                    
+                }
+                .nav-link.active{
+                    border-radius: 10px;
+                    margin-bottom: -1px;
+                    color: blue;
+                
+                }
+                .nav-link:hover{
+                    border-radius: 10px;
+                    color: red;
+                    
+                }
+            </style>
+    </head>
+    <body>
+        <div class="container-fluid my-3">
+            <div class="row justify-content-center">
+                <div class="col-4 mx-3" style="background-color: aliceblue;">
+                    <div class="row"
+                        style="text-align: center; line-height: 50px;">
+                        <b>Order: 21.1</b>
+                    </div>
+                    <div id="menu-order" class="row"
+                        style="min-height: 500px; background-color: aliceblue;">
+                    </div>
+                </div>
+
+                <!-- MENU -->
+
+                <div class="col-7 mx-2 "
+                    style="background-color: transparent; padding-right: 16px; padding-left: 0;">
+                    <div class="container-fluid p-0">
+                        <div class="row">
+
+                            <!-- LIST DANH MỤC -->
+
+                            <div class="col-2" style="text-align: center;">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item mb-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link active user-select-none py-3" data-bs-target="#tatca" data-bs-toggle="tab"
+                                            style="font-weight: bold; border-radius: 10px;">Tất
+                                            cả</a>
+                                    </li>
+                                    <li class="nav-item my-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link user-select-none py-3" data-bs-target="#caphe" data-bs-toggle="tab"
+                                            style="font-weight: bold;">Cà
+                                            phê</a>
+                                    </li>
+                                    <li class="nav-item my-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link user-select-none py-3" data-bs-target="#tatca" data-bs-toggle="tab"
+                                            style="font-weight: bold;"
+                                        >Macchiato</a>
+                                    </li>
+                                    <li class="nav-item my-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link user-select-none py-3" data-bs-target="#tatca" data-bs-toggle="tab"
+                                            style="font-weight: bold;">Trà
+                                            nóng</a>
+                                    </li>
+                                    <li class="nav-item my-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link user-select-none py-3" data-bs-target="#tatca" data-bs-toggle="tab"
+                                            style="font-weight: bold;">Trà
+                                            trái cây</a>
+                                    </li>
+                                    <li class="nav-item my-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link user-select-none py-3" data-bs-target="#tatca" data-bs-toggle="tab"
+                                            style="font-weight: bold;">Nước
+                                            ép</a>
+                                    </li>
+                                    <li class="nav-item my-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link user-select-none py-3" data-bs-target="#tatca" data-bs-toggle="tab"
+                                            style="font-weight: bold;">Trà
+                                            sữa</a>
+                                    </li>
+                                    <li class="nav-item my-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link user-select-none py-3" data-bs-target="#tatca" data-bs-toggle="tab"
+                                            style="font-weight: bold;">Sữa
+                                            chua</a>
+                                    </li>
+                                    <li class="nav-item mt-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link user-select-none py-3" data-bs-target="#tatca" data-bs-toggle="tab"
+                                            style="font-weight: bold;">Đá
+                                            xay</a>
+                                    </li>
+                                    <li class="nav-item mt-2"
+                                        style="background-color: aliceblue; border-radius: 10px; width: 100%;">
+                                        <a class="nav-link user-select-none py-3" data-bs-target="#tatca" data-bs-toggle="tab"
+                                            style="font-weight: bold;">Đá
+                                            xay</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- DANH SÁCH SẢN PHẨM -->
+
+                            <div class="tab-content col-10 px-2 pt-0">
+
+                                <!-- TẤT CẢ -->
+
+                                <div id="tatca" class="container tab-pane active">
+                                    <div class="row" style="max-height: 703px; overflow-y: auto;">
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/1.png" class="card-img-top img-fluid" alt="Boozy Sour Watermelon Slushies">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600;">Sour Watermelon Slushies</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/2.png" class="card-img-top img-fluid" alt="Frozen Sangria Margarita">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Frozen Sangria Margarita</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/3.png" class="card-img-top img-fluid" alt="Moscow Mule Punch">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Moscow Mule Punch</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/4.png" class="card-img-top img-fluid" alt="Red Sangria">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Red Sangria</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/5.png" class="card-img-top img-fluid" alt="Cold Brew Sangria">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Cold Brew Sangria</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CÀ PHÊ -->
+
+                                <div id="caphe" class="container tab-pane">
+                                    <div class="row" style="max-height: 680px; overflow-y: auto;">
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/affogato.png" class="card-img-top img-fluid" alt="Boozy Sour Watermelon Slushies">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600;">Sour Watermelon Slushies</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/americano.png" class="card-img-top img-fluid" alt="Frozen Sangria Margarita">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Frozen Sangria Margarita</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/cappuccino.png" class="card-img-top img-fluid" alt="Moscow Mule Punch">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Moscow Mule Punch</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/cortado.png" class="card-img-top img-fluid" alt="Red Sangria">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Red Sangria</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/ic-macchiato.png" class="card-img-top img-fluid" alt="Cold Brew Sangria">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Cold Brew Sangria</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/latte-macchiato.png" class="card-img-top img-fluid" alt="Cold Brew Sangria">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Cold Brew Sangria</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%; background-color: antiquewhite;">
+                                                    <img src="img/dalgona.png" class="card-img-top img-fluid" alt="Sangria Lemonade">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Sangria Lemonade</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/espresso.png" class="card-img-top img-fluid" alt="Cappuccino">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Cappuccino</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/latte.png" class="card-img-top img-fluid" alt="Frozen Sangria Margarita">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Frozen Sangria Margarita</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/mocha.png" class="card-img-top img-fluid" alt="Moscow Mule Punch">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Moscow Mule Punch</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="container-fluid px-0 pb-2">
+                                                <div class="card" style="width: 100%;">
+                                                    <img src="img/iced-black-cf.png" class="card-img-top img-fluid" alt="Moscow Mule Punch">
+                                                    <div class="card-body p-0" style="text-align: center;">
+                                                        <div class="card-title" style="font-size: 16px; font-weight: 600; min-height: 48px;">Moscow Mule Punch</div>
+                                                        <div class="card-footer">
+                                                            <b style="color: red;">50.000đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
