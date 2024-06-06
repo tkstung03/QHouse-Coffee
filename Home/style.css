@@ -10,19 +10,11 @@ body{
     background-size: cover;
     background-position-y: 0px;
 }
-#menu-order{
-    background-image: url(/Home/img/mug-saucer-solid.svg);
-    background-size: 10%;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-}
 ::-webkit-scrollbar {
     width: 8px; /* Đặt độ rộng của thanh cuộn */
-  }
+}
   
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color:rgba(60, 29, 11, 0.8); /* Đặt màu của thanh cuộn */
     border-radius: 5px; /* Đặt góc bo tròn cho thanh cuộn */
-  }
+}
