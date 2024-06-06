@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <style>
+            body{
+                background: url('./img/background.jpg');
+                background-size: cover;
+                background-position-y: 0px;
+            }
+            .dropdown-item:hover{
+                background-color: #0a58ca;
+            }
+        </style>
+</head>
+<body>
+    <div class="container-fluid my-3">
+        <div class="row justify-content-center" style="min-height: 500px;">
+            <div class="col-4 mx-3 p-0"
+                style="background-color: aliceblue; border-radius: 10px;">
+                <div class="row justify-content-center m-3"
+                    style=" line-height: 50px; border-bottom: 1px dashed black;">
+                    <div class="col-5 p-0" style="text-align: end;">
+                        <b>Order:</b>
+                    </div>
+                    <div class="col-2">
+                        <input type="text" class="form-control disabled" disabled name="" id="" value="21.1" style="height: auto; width: 60px; margin:6px; font-weight: bold;">
+                    </div>
+                    <div class="col-5 justify-content-end" style="text-align: end;">
+                        <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="row" style="min-height: 450px;">
+                
+                </div>
+                <div class="container mt-auto">
+                    <div class="row mt-auto justify-content-end me-auto ">
+                        <div class="col-2" style="padding: 0 6px;">
+                            <button class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-store"></i></button>
+                        </div>
+                        <div class="col-2" style="padding: 0 6px;">
+                            <button class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-bag-shopping"></i></button>
+                        </div>
+                        <div class="col-2" style="padding: 0 6px;">
+                            <button class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-motorcycle"></i></button>
+                        </div>
+                        <div class="col-2" style="padding: 0 6px;">
+                            <button class="btn btn-primary" style="width: 80%;"><i class="fa-solid fa-circle-info"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mt-auto">
+                    <div class="row mt-auto me-auto p-2 pt-3">
+                        <div class="col-6" style="text-align: end;"><b>Tổng tiền</b></div>
+                        <div class="col-5" style="text-align: end; background-color: silver; border-radius: 5px;"><b>0</b></i></div>
+                        <div class="col-1" style="text-align: end;"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+                </div>
+                <div class="container mt-auto">
+                    <div class="row mt-auto me-auto p-2 pt-3">
+                        <div class="col-4 pe-0" style="text-align: end;">
+                            <button class="btn btn-lg btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                        <div class="col-8">
+                            <button class="btn btn-lg btn-secondary" style="width: 100%;">
+                                <i class="fa-solid fa-calculator"></i>
+                                <span style="font-weight: bold;">THU TIỀN</span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>   
+            </div>
+            <div class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;">
+                <div class="row container-fluid p-0">
+                    <div class="col-6 ps-0 " style="border-radius: 10px;">
+                        <div class="container-fluid" style="min-height: 430px; background-color: #f1f1f1; border-top-left-radius: 10px;">
+                            <div class="row pt-3" >
+                                <div class="col-6">
+                                    <span style="font-weight: bold;">Tổng thanh toán:</span>
+                                </div>
+                                <div class="col-6" style="text-align: end;">
+                                    <label for="tongtt" style="font-weight: bold;">90000</label>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-6">
+                                    <span style="font-weight: bold;">Trước thuế:</span>
+                                </div>
+                                <div class="col-6" style="text-align: end;">
+                                    <label for="truocthue" style="font-weight: bold;">90000</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="row mt-auto p-2">
+                            <div class="col-6 px-2 py-2">
+                                <button id="btn-80k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('72000')">72.000đ</button>
+                            </div>
+                            <div class="col-6 px-2 py-2">
+                                <button id="btn-80k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('80000')">80.000đ</button>
+                            </div>
+                            <div class="col-6 px-2 py-2">
+                                <button id="btn-100k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('100000')">100.000đ</button>
+                            </div>
+                            <div class="col-6 px-2 py-2">
+                                <button id="btn-120k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('120000')">120.000đ</button>
+                            </div>
+                            <div class="col-6 px-2 py-2">
+                                <button id="btn-200k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('200000')">200.000đ</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6">
+                        <div class="container-fluid">
+                            <div class="container-fluid" style="min-height: 432px;">
+                                <div class="row pt-3" >
+                                    <div class="col-6">
+                                        <span style="font-weight: bold;">Còn phải thu:</span>
+                                    </div>
+                                    <div class="col-6" style="text-align: end;">
+                                        <input type="text" name="" value="90000" id="thu" 
+                                        style="font-weight: bold; border: none;background-color: aliceblue; text-align: end; padding-right: 10px; width: 50%;" disabled>
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-6">
+                                        <span style="font-weight: bold;">Khách đưa:</span>
+                                    </div>
+                                    <div class="col-6" style="text-align: end;">
+                                        <input type="text" name="" value="" id="khachdua" 
+                                        style="border: 0.5px solid black; border-radius: 5px; text-align: end; padding-right: 10px; width: 50%;">
+                                    </div>
+                                </div>
+                                <div class="row pt-3" >
+                                    <div class="col-6">
+                                        <span style="font-weight: bold;">Trả lại khách:</span>
+                                    </div>
+                                    <div class="col-6" style="text-align: end;">
+                                        <input type="text" name="" value="0" id="tralai" 
+                                        style="font-weight: bold; border: none;background-color: aliceblue; text-align: end; padding-right: 10px; width: 50%;" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-auto">
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(7)">7</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(8)">8</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(9)">9</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(4)">4</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(5)">5</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(6)">6</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(1)">1</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(2)">2</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(3)">3</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-danger btn-number" style="width: 100%; font-weight: bold;" onclick="Xoa()">C</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(0)">0</button>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <button class="btn btn-warning btn-number" style="width: 100%; font-weight: bold;" onclick="XoaKyTuCuoi()"><i class="fa-solid fa-delete-left"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 px-3 pt-4 justify-content-start">
+                        <a href="/Home/home.html" class="text-decoration-none" style="font-weight: bold; font-size: large;">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            QUAY LẠI
+                        </a>
+                    </div>
+                    <div class="col container-fluid">
+                        <div class="row justify-content-end me-4">
+                            <div class="dropup col-3 px-1 pt-2 justify-content-end">                       
+                                    <button type="button" id="dropdownMenuButton" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                    style="width: 100%; height: 48px; font-weight: bold;">
+                                      KHÁC 
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #0d6efd;">
+                                      <li><a class="dropdown-item" href="#"  style="width: 100%; height: 48px; color: white; font-weight: bold;" onclick="selectItem('ATM')">ATM</a></li>
+                                      <li><a class="dropdown-item" href="#" style="width: 100%; height: 48px; color: white; font-weight: bold;" onclick="selectItem('VISA')">VISA</a></li>
+                                      <li><a class="dropdown-item" href="#" style="width: 100%; height: 48px; color: white; font-weight: bold;" onclick="selectItem('MOMO')">MOMO</a></li>
+                                    </ul>     
+                            </div>
+                            <div class="col-3 px-1 pt-2 justify-content-end">
+                                <button class="btn btn-primary" style="width: 100%; height: 48px; font-weight: bold;">VIETTELPAY</button>
+                            </div>
+                            <div class="col-3 px-1 pt-2 justify-content-end">
+                                <button class="btn btn-primary" style="width: 100%; height: 48px; font-weight: bold;">ZALOPAY</button>
+                            </div>
+                            <div class="col-3 px-1 pt-2 justify-content-end">
+                                <button class="btn btn-success" style="width: 100%; height: 48px; font-weight: bold;">TIỀN MẶT</button>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="script.js"></script>
+</html>
