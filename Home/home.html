@@ -4,8 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>QHouse - Trang chủ</title>
-        
-        
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -36,27 +35,29 @@
                             <b>Order:</b>
                         </div>
                         <div class="col-2">
-                            <input type="text" id="orderNumber" class="form-control" disabled name="" value="12.0" style="height: auto; width: 60px; margin:6px; font-weight: bold;">
+                            <input type="text" id="orderNumber" class="form-control" disabled name="" value="12.00" style="background-color: white;height: auto; width: 70px; margin:6px; font-weight: bold;">
                         </div>
                         <div class="col-5 justify-content-end" style="text-align: end;">
                             <button class="btn btn-primary" onclick="newOrder()"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
-                
-                    <div class="row container" id="productContainer" style="max-height: 450px; min-height: 450px; overflow-y: auto;">
+                    <div class="row" style="max-height: 450px; min-height: 450px; overflow-y: auto; margin: 0;">
+                        <div class="container-fluid" style="width: 95%;" id="productContainer" >
+                    </div>
+
+                    
                        
                     </div>
-        
                     <div class="container mt-auto">
                         <div class="row mt-auto justify-content-end me-auto ">
                             <div class="col-2" style="padding: 0 6px;">
-                                <button class="btn btn-success active" style="width: 100%;"><i class="fa-solid fa-store"></i></button>
+                                <button id="btnTaiQuan" class="btn btn-success active" style="width: 100%;"><i class="fa-solid fa-store"></i></button>
                             </div>
                             <div class="col-2" style="padding: 0 6px;">
-                                <button class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-bag-shopping"></i></button>
+                                <button id="btnMangDi" class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-bag-shopping"></i></button>
                             </div>
                             <div class="col-2" style="padding: 0 6px;">
-                                <button class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-motorcycle"></i></button>
+                                <button onclick="openGiaoHang()" id="btnGiaoHang" class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-motorcycle"></i></button>
                             </div>
                             <div class="col-2" style="padding: 0 6px;">
                                 <button class="btn btn-success" style="width: 80%;"><i class="fa-solid fa-circle-info"></i></button>
@@ -75,13 +76,13 @@
                     <div class="container mt-auto">
                         <div class="row mt-auto me-auto p-2 pt-3">
                             <div class="col-4 pe-0" style="text-align: end;">
-                                <button class="btn btn-lg btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                <button class="btn btn-lg btn-danger" onclick="deleteAll()"><i class="fa-solid fa-trash-can"></i></button>
                             </div>
                             <div class="col-8">
-                                <a href="/Payment/index.html" class="btn btn-lg btn-secondary" style="width: 100%;">
+                                <button href="#" id="btnThuTien" class="btn btn-lg btn-secondary" style="width: 100%;">
                                     <i class="fa-solid fa-calculator"></i>
                                     <span style="font-weight: bold;">THU TIỀN</span>
-                                </a>
+                                </button>
                             </div>
                             
                         </div>
@@ -91,8 +92,7 @@
                 </div>
 
                 <!-- MENU -->
-
-                <div class="col-7 mx-2 "
+                <div id="menu" class="col-7 mx-2 "
                     style="background-color: transparent; padding-right: 16px; padding-left: 0;">
                     <div class="container-fluid p-0">
                         <div class="row">
@@ -186,7 +186,7 @@
                                                             Slushies</div>
                                                         <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="price" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -216,77 +216,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img src="img/3.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Moscow Mule Punch">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Moscow
-                                                            Mule Punch
-                                                        </div>
-                                                        <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img src="img/4.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Red Sangria">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Red
-                                                            Sangria</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img src="img/5.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Cold Brew Sangria">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cold
-                                                            Brew Sangria</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
+                                                <div class="card" id="card1"
                                                     style="width: 100%;">
                                                     <img src="img/black-coffee.png"
                                                         class="card-img-top img-fluid"
@@ -297,34 +231,14 @@
                                                             style="font-size: 16px; font-weight: 600; padding: 0 2px; min-height: 48px;">Cà phê đen</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="30000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img src="img/affogato.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Cà phê Affogato">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; padding: 0 2px; min-height: 48px;">Cà phê Affogato</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -339,7 +253,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Americano</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="57000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -361,7 +275,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Cappuccino</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="52000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -382,35 +296,14 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Cortado</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="70000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/ic-macchiato.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Cà Phê Macchiato">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Macchiato</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -426,7 +319,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Latte Macchiato</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="57000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -447,7 +340,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Dalgona</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="48000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -468,7 +361,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Espresso</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="30000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -489,7 +382,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Latte</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="60000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -507,40 +400,17 @@
                                                     <div class="card-body p-0"
                                                         style="text-align: center;">
                                                         <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Moscow
-                                                            Mule Punch</div>
+                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Mocha</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="62000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/iced-black-cf.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Moscow Mule Punch">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Moscow
-                                                            Mule Punch</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -585,28 +455,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/tra-duong-nhan.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Trà dưỡng nhan">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Dưỡng Nhan</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -806,28 +655,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/ts-caramel.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Trà sữa Caramel">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Sữa Caramel</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -919,28 +747,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/ts-tran-chau-trang.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Trà sữa Trân Châu Trắng">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Sữa Trân Châu Trắng</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -999,7 +806,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Matcha Đá Xay</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="40000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1020,7 +827,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Khoai Môn Đá Xay</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="40000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1041,7 +848,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Oreo Đá Xay</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="45000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1062,7 +869,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Socola Đá Xay</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="45000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1091,34 +898,14 @@
                                                             style="font-size: 16px; font-weight: 600; padding: 0 2px; min-height: 48px;">Cà phê đen</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="30000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img src="img/affogato.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Cà phê Affogato">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; padding: 0 2px; min-height: 48px;">Cà phê Affogato</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -1133,7 +920,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Americano</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="57000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1155,7 +942,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Cappuccino</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="52000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1176,35 +963,14 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Cortado</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="70000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/ic-macchiato.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Cà Phê Macchiato">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Macchiato</div>
-                                                            <div
-                                                            class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
-                                                            <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -1220,7 +986,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Latte Macchiato</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="57000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1241,7 +1007,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Dalgona</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="48000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1262,7 +1028,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Cà Phê Espresso</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="30000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1283,7 +1049,7 @@
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Latte</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="60000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
@@ -1301,35 +1067,11 @@
                                                     <div class="card-body p-0"
                                                         style="text-align: center;">
                                                         <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Moscow
-                                                            Mule Punch</div>
+                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Mocha</div>
                                                             <div
                                                             class="card-footer">
-                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <input type="text" name="" readonly value="62000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
                                                             <b style="color: red;">đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/iced-black-cf.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Moscow Mule Punch">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Moscow
-                                                            Mule Punch</div>
-                                                        <div
-                                                            class="card-footer">
-                                                            <b
-                                                                style="color: red;">50.000đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1337,7 +1079,11 @@
                                         </div>
                                     </div>
                                 </div>
+
+
                                 <!-- TRÀ NÓNG -->
+
+
                                 <div id="tranong" class="container tab-pane">
                                     <div class="row"
                                         style="max-height: 680px; overflow-y: auto;">
@@ -1354,10 +1100,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Chanh Quế Mật Ong</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">40.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1376,37 +1122,16 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Đen</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">30.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/tra-duong-nhan.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Trà dưỡng nhan">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Dưỡng Nhan</div>
-                                                        <div
-                                                            class="card-footer">
-                                                            <b
-                                                                style="color: red;">35.000đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -1420,10 +1145,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Hoa Cúc</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">30.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1442,10 +1167,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Hoa Hồng</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">30.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1464,10 +1189,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Nhài</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">30.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1486,10 +1211,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Ô-long</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">30.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1515,10 +1240,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Atiso Đỏ</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">35.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1537,10 +1262,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Chanh</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">25.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1560,10 +1285,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Đào</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">35.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1582,10 +1307,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Dâu</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">35.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1604,10 +1329,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Dâu Tằm</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">35.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1620,28 +1345,7 @@
                                 <div id="trasua" class="container tab-pane">
                                     <div class="row"
                                         style="max-height: 680px; overflow-y: auto;">
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/ts-caramel.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Trà sữa Caramel">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Sữa Caramel</div>
-                                                        <div
-                                                            class="card-footer">
-                                                            <b
-                                                                style="color: red;">42.000đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -1655,10 +1359,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Sữa Caramel Macchiato</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">45.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1677,10 +1381,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Sữa Khoai Môn</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">42.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1699,10 +1403,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Sữa Matcha</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">42.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1722,39 +1426,18 @@
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">
                                                             Trà Sữa Oreo Chocolate Cream
-                                                            <span class="badge bg-secondary">Mới</span>
+                                                            
                                                         </div>
                                                         <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">48.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div
-                                                class="container-fluid px-0 pb-2">
-                                                <div class="card"
-                                                    style="width: 100%;">
-                                                    <img
-                                                        src="img/ts-tran-chau-trang.png"
-                                                        class="card-img-top img-fluid"
-                                                        alt="Trà sữa Trân Châu Trắng">
-                                                    <div class="card-body p-0"
-                                                        style="text-align: center;">
-                                                        <div class="card-title"
-                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Sữa Trân Châu Trắng</div>
-                                                        <div
-                                                            class="card-footer">
-                                                            <b
-                                                                style="color: red;">35.000đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -1768,10 +1451,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Sữa Trân Châu Đường Đen</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">40.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1790,10 +1473,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Trà Sữa Xoài</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">42.000đ</b>
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1804,9 +1487,56 @@
                                 </div>
 
                                 <!-- ĐÁ XAY -->
+                                 
                                 <div id="daxay" class="container tab-pane">
                                     <div class="row"
                                         style="max-height: 680px; overflow-y: auto;">
+                                        <div class="col-3">
+                                            <div
+                                                class="container-fluid px-0 pb-2">
+                                                <div class="card"
+                                                    style="width: 100%;">
+                                                    <img src="img/1.png"
+                                                        class="card-img-top img-fluid"
+                                                        alt="Boozy Sour Watermelon Slushies">
+                                                    <div class="card-body p-0"
+                                                        style="text-align: center;">
+                                                        <div class="card-title"
+                                                            style="font-size: 16px; font-weight: 600;">Sour
+                                                            Watermelon
+                                                            Slushies</div>
+                                                            <div
+                                                            class="card-footer">
+                                                            <input type="text" name="" readonly value="50000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div
+                                                class="container-fluid px-0 pb-2">
+                                                <div class="card"
+                                                    style="width: 100%;">
+                                                    <img src="img/2.png"
+                                                        class="card-img-top img-fluid"
+                                                        alt="Frozen Sangria Margarita">
+                                                    <div class="card-body p-0"
+                                                        style="text-align: center;">
+                                                        <div class="card-title"
+                                                            style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Frozen
+                                                            Sangria
+                                                            Margarita</div>
+                                                            <div
+                                                            class="card-footer">
+                                                            <input type="text" name="" value="55000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-3">
                                             <div
                                                 class="container-fluid px-0 pb-2">
@@ -1819,10 +1549,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Matcha Đá Xay</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b
-                                                                style="color: red;">45.000đ</b>
+                                                            <input type="text" name="" readonly value="40000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1840,9 +1570,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Khoai Môn Đá Xay</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b style="color: red;">48.000đ</b>
+                                                            <input type="text" name="" readonly value="40000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1860,9 +1591,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Oreo Đá Xay</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b style="color: red;">45.000đ</b>
+                                                            <input type="text" name="" readonly value="45000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1880,9 +1612,10 @@
                                                         style="text-align: center;">
                                                         <div class="card-title"
                                                             style="font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 2px;">Socola Đá Xay</div>
-                                                        <div
+                                                            <div
                                                             class="card-footer">
-                                                            <b style="color: red;">48.000đ</b>
+                                                            <input type="text" name="" readonly value="45000" style="background-color: transparent; width: 50px; border: none; font-weight: bold; color: red;">
+                                                            <b style="color: red;">đ</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1895,8 +1628,246 @@
                         </div>
                     </div>
                 </div>
+                <div id="payment" class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;">
+                    <div class="row container-fluid p-0">
+                        <div class="col-6 ps-0 " style="border-radius: 10px;">
+                            <div class="container-fluid" style="min-height: 430px; background-color: #f1f1f1; border-top-left-radius: 10px;">
+                                <div class="row pt-3" >
+                                    <div class="col-6">
+                                        <span style="font-weight: bold;">Tổng thanh toán:</span>
+                                    </div>
+                                    <div class="col-6" style="text-align: end;">
+                                        <label for="tongtt" style="font-weight: bold;">90000</label>
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-6">
+                                        <span style="font-weight: bold;">Trước thuế:</span>
+                                    </div>
+                                    <div class="col-6" style="text-align: end;">
+                                        <label for="truocthue" style="font-weight: bold;">90000</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="row mt-auto p-2">
+                                <div class="col-6 px-2 py-2">
+                                    <button id="btn-80k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('72000')">72.000đ</button>
+                                </div>
+                                <div class="col-6 px-2 py-2">
+                                    <button id="btn-80k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('80000')">80.000đ</button>
+                                </div>
+                                <div class="col-6 px-2 py-2">
+                                    <button id="btn-100k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('100000')">100.000đ</button>
+                                </div>
+                                <div class="col-6 px-2 py-2">
+                                    <button id="btn-120k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('120000')">120.000đ</button>
+                                </div>
+                                <div class="col-6 px-2 py-2">
+                                    <button id="btn-200k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('200000')">200.000đ</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-6">
+                            <div class="container-fluid">
+                                <div class="container-fluid" style="min-height: 432px;">
+                                    <div class="row pt-3" >
+                                        <div class="col-6">
+                                            <span style="font-weight: bold;">Còn phải thu:</span>
+                                        </div>
+                                        <div class="col-6" style="text-align: end;">
+                                            <input type="text" name="" value="0" id="thu" 
+                                            style="font-weight: bold; border: none;background-color: aliceblue; color: black; text-align: end; padding-right: 10px; width: 50%; margin-right: 10px;" disabled> <b>đ</b>
+                                        </div>
+                                    </div>
+                                    <div class="row my-2">
+                                        <div class="col-6">
+                                            <span style="font-weight: bold;">Khách đưa:</span>
+                                        </div>
+                                        <div class="col-6" style="text-align: end;">
+                                            <input type="text" name="" value="" id="khachdua" 
+                                            style="border: 0.5px solid black;  color: black; font-weight: bold; border-radius: 5px; text-align: end; padding-right: 10px; width: 50%; margin-right: 10px;" disabled> <b>đ</b>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-3" >
+                                        <div class="col-6">
+                                            <span style="font-weight: bold;">Trả lại khách:</span>
+                                        </div>
+                                        <div class="col-6" style="text-align: end;">
+                                            <input type="text" name="" value="0" id="tralai" 
+                                            style="font-weight: bold; border: none;background-color: aliceblue; color: red; text-align: end; padding-right: 10px; width: 50%; margin-right: 10px;" disabled> <b style="color: red;">đ</b>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mt-auto">
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(7)">7</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(8)">8</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(9)">9</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(4)">4</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(5)">5</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(6)">6</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(1)">1</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(2)">2</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(3)">3</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-danger btn-number" style="width: 100%; font-weight: bold;" onclick="Xoa()">C</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(0)">0</button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <button class="btn btn-warning btn-number" style="width: 100%; font-weight: bold;" onclick="XoaKyTuCuoi()"><i class="fa-solid fa-delete-left"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 px-3 pt-4 justify-content-start">
+                            <a id="quaylai" onclick="quayLai()" class="text-decoration-none" style="font-weight: bold; font-size: large; cursor: pointer;">
+                                <i class="fa-solid fa-chevron-left"></i>
+                                QUAY LẠI
+                            </a>
+                        </div>
+                        <div class="col container-fluid">
+                            <div class="row justify-content-end me-4">
+                                <div class="dropup col-3 px-1 pt-2 justify-content-end">                       
+                                        <button type="button" id="dropdownMenuButton" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                        style="width: 100%; height: 48px; font-weight: bold;">
+                                          KHÁC 
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #0d6efd;">
+                                          <li><a class="dropdown-item" href="#"  style="width: 100%; height: 48px; color: white; font-weight: bold;" onclick="selectItem('ATM')">ATM</a></li>
+                                          <li><a class="dropdown-item" href="#" style="width: 100%; height: 48px; color: white; font-weight: bold;" onclick="selectItem('VISA')">VISA</a></li>
+                                          <li><a class="dropdown-item" href="#" style="width: 100%; height: 48px; color: white; font-weight: bold;" onclick="selectItem('MOMO')">MOMO</a></li>
+                                        </ul>     
+                                </div>
+                                <div class="col-3 px-1 pt-2 justify-content-end">
+                                    <button class="btn btn-primary" style="width: 100%; height: 48px; font-weight: bold;">VIETTELPAY</button>
+                                </div>
+                                <div class="col-3 px-1 pt-2 justify-content-end">
+                                    <button class="btn btn-primary" style="width: 100%; height: 48px; font-weight: bold;">ZALOPAY</button>
+                                </div>
+                                <div class="col-3 px-1 pt-2 justify-content-end">
+                                    <button class="btn btn-success" style="width: 100%; height: 48px; font-weight: bold;">TIỀN MẶT</button>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div> 
+                <div id="shipInfo" class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;">
+                    <div class="container-fluid" style="min-height: 600px;">
+                        <div class="row mt-3 container">
+                            <div class="col-3" style="text-align: end; ">
+                                <label class="center-align-label" for="">Đối tác GH: </label>
+                            </div>
+                            <div class="col-8">
+                                <select name="" id="doitacGH" class="form-select" style="width: 200px;" disabled>
+                                    <option value="0">Quán tự giao</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row mt-4 container">
+                            <div class="col-3" style="text-align: end; ">
+                                <label class="center-align-label" for="">Thời gian GH: </label>
+                            </div>
+                            <div class="col-8" style="display: flex;">
+                                <input class="form-control me-4" type="time"  name="" id="timeGH" style="width: 150px; text-align: center;">
+                                <input class="form-control" type="date" name="" id="date" style="width: 200px; text-align: center;">
+                            </div>
+                        </div>
+                        <div class="row mt-4 container">
+                            <div class="col-3" style="text-align: end; ">
+                                <label class="center-align-label" for="">Họ tên KH: <span style="color: red;">*</span></label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" name="" id="txtTen" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-4 container">
+                            <div class="col-3" style="text-align: end; ">
+                                <label class="center-align-label" for="">Số điện thoại: <span style="color: red;">*</span></label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" name="" id="txtSDT" class="form-control" style="width: 200px;">
+                            </div>
+                        </div>
+                        <div class="row mt-4 container">
+                            <div class="col-3" style="text-align: end; ">
+                                <label class="center-align-label" for="">Địa chỉ GH: <span style="color: red;">*</span></label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" name="" id="txtDiaChi" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-4 container">
+                            <div class="col-3" style="text-align: end; ">
+                                <label class="center-align-label" for="">Phí GH: </label>
+                            </div>
+                            <div class="col-8" style="display: flex;">
+                                <input type="text" name="" value="0" id="txtPhi" class="form-control me-1" style="width: 150px; text-align: end;">
+                                <label class="center-align-label" for=""><i class="fa-solid fa-dollar-sign"></i></label> 
+                            </div>
+                        </div>
+                        <div class="row mt-4 container">
+                            <div class="col-3" style="text-align: end; ">
+                                <label class="center-align-label" for="">Tiền khách trả trước: </label>
+                            </div>
+                            <div class="col-8" style="display: flex;">
+                                <input type="text" name="" value="0" id="txtTraTruoc" class="form-control me-1" style="width: 150px; text-align: end;">
+                                <label class="center-align-label" for=""><i class="fa-solid fa-dollar-sign"></i></label> 
+                            </div>
+                        </div>
+                        <div class="row mt-4 container">
+                            <div class="col-3" style="text-align: end; ">
+                                <label class="center-align-label" for="">Ghi chú: </label>
+                            </div>
+                            <div class="col-8">
+                                <textarea name="" class="form-control" id="txtGhiChu"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-auto">
+                        <div class="col-3 px-3 pt-4 justify-content-start">
+                            <a id="quaylai2" onclick="quayLai2()" class="text-decoration-none" style="font-weight: bold; font-size: large; cursor: pointer;">
+                                <i class="fa-solid fa-chevron-left"></i>
+                                QUAY LẠI
+                            </a>
+                        </div>
+                        <div class="col container-fluid">
+                            <div class="row justify-content-end me-4">
+                                
+                                <div class="col-3 px-1 pt-2 justify-content-end">
+                                    <button id="btnLuu" class="btn btn-primary" style="width: 100%; height: 48px; font-weight: bold;">LƯU</button>
+                                </div>
+                            </div>   
+                        </div>
+                </div>
             </div>
         </div>
     </body>
     <script src="/Home/script.js"></script>
+
 </html>

@@ -1,4 +1,9 @@
 
+import '../Home/script.js';
+// Gọi hàm loadProductCards khi trang được tải và sau khi lưu sản phẩm mới
+window.addEventListener('DOMContentLoaded', function() {
+    loadProductCards();
+});
 
 const display = document.getElementById('khachdua');
 const btns = document.getElementsByTagName('btn-number');
