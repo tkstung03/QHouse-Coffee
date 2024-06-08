@@ -5,24 +5,58 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Times New Roman', Times, serif;
+    
     background: url('./img/background.jpg');
     background-size: cover;
     background-position-y: 0px;
 }
-#menu-order{
-    background-image: url(/Home/img/mug-saucer-solid.svg);
-    background-size: 10%;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-}
 ::-webkit-scrollbar {
     width: 8px; /* Đặt độ rộng của thanh cuộn */
-  }
+}
   
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color:rgba(60, 29, 11, 0.8); /* Đặt màu của thanh cuộn */
     border-radius: 5px; /* Đặt góc bo tròn cho thanh cuộn */
+}
+#shipInfo{
+    display: none;
+}
+#menu{
+    display: block;
+}
+#payment{
+    display: none;
+}
+.dropdown-item:hover{
+    background-color: #0a58ca;
+}
+.center-align-label {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+    font-weight: bold;
   }
+
+
+.nav-tabs{
+    border: none;
+    --bs-nav-tabs-link-active-color: rgb(138, 71, 71);
+    --bs-nav-tabs-link-active-bg: antiquewhite;
+    --bs-nav-tabs-border-color: antiquewhite;
+    --bs-nav-tabs-link-active-border-color: rgb(138, 71, 71);
+    }
+a.nav-link{
+    color: black;
+    
+}
+.nav-link.active{
+    border-radius: 10px;
+    margin-bottom: -1px;
+    color: blue;
+    
+}
+.nav-link:hover{
+    border-radius: 10px;
+    color: red;   
+}     
