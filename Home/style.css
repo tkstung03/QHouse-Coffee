@@ -10,6 +10,9 @@ body{
     background-size: cover;
     background-position-y: 0px;
 }
+.dropdown-toggle::after {
+    display: none;
+  }
 ::-webkit-scrollbar {
     width: 8px; /* Đặt độ rộng của thanh cuộn */
 }

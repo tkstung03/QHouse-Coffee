@@ -19,10 +19,9 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/Home/style.css">
-    
+
     </head>
     <body>
-
         <!-- TRANG ORDER -->
 
         <div class="container-fluid my-3">
@@ -31,13 +30,23 @@
                     style="background-color: aliceblue; border-radius: 10px;">
                     <div class="row justify-content-center m-3"
                         style=" line-height: 50px; border-bottom: 1px dashed black;">
-                        <div class="col-5 p-0" style="text-align: end;">
+                        <div class="col-2">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle rounded-circle" style="width: 40px; height: 40px;" data-bs-toggle="dropdown">
+                                    <i class="fa-solid fa-user"></i>
+                                </button>
+                                <ul class="dropdown-menu" style="height: 40px;" >
+                                  <li style="height: 40px;"><a class="dropdown-item" href="/Login/login.html" style="height: 40px;" >Đăng xuất</a></li>
+                                </ul>
+                              </div>
+                        </div>
+                        <div class="col-4 p-0" style="text-align: end;">
                             <b>Order:</b>
                         </div>
-                        <div class="col-2">
+                        <div class="col-4">
                             <input type="text" id="orderNumber" class="form-control" disabled name="" value="12.00" style="background-color: white;height: auto; width: 70px; margin:6px; font-weight: bold;">
                         </div>
-                        <div class="col-5 justify-content-end" style="text-align: end;">
+                        <div class="col-2 justify-content-end" style="text-align: end;">
                             <button class="btn btn-primary" onclick="newOrder()"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
