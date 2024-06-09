@@ -16,6 +16,8 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="script.js"></script>
   </head>
@@ -40,7 +42,7 @@
               <span class="fas fa-user-circle text-white mx-2"></span>
               <span id="username" class="text-white"></span>
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" id="menu_taikhoan">
               <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
               <li><a class="dropdown-item" href="#">Đổi tài khoản</a></li>
             </ul>
@@ -58,7 +60,8 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link user-select-none py-4" data-bs-toggle="tab"
-                  data-bs-target="#douong" style="font-weight: bold;">Đồ uống</a>
+                  data-bs-target="#douong" style="font-weight: bold;">Đồ
+                  uống</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link user-select-none py-4" data-bs-toggle="tab"
@@ -78,14 +81,15 @@
               </li>
             </ul>
           </div>
-          <div id="noidung" class="col-10 ">
+          <div id="noidung" class="col-10">
             <div class="tab-content">
               <!-- Tab danh mục -->
               <div id="danhmuc" class="container tab-pane active">
                 <div class="row my-3">
                   <div class="col-10"></div>
                   <div class="col-2">
-                    <div class="btn btn-outline-dark">Thêm mới
+                    <div id="btn_them_danhmuc" class="btn btn-outline-dark">Thêm
+                      mới
                       <span class="fa-solid fa-plus-circle"></span>
                     </div>
                   </div>
@@ -103,27 +107,27 @@
                     <tbody class="text-center">
                       <!-- cà phê 1 -->
                       <tr id="danhmuc1">
-                        <td class="madanhmuc">DM101</td>
+                        <td></td>
                         <td class="tendanhmuc">Cà phê</td>
                       </tr>
                       <!-- trà nóng 2 -->
                       <tr id="danhmuc2">
-                        <td class="madanhmuc">DM102</td>
+                        <td></td>
                         <td class="tendanhmuc">Trà nóng</td>
                       </tr>
                       <!-- Trà trái cây 3 -->
                       <tr id="danhmuc3">
-                        <td class="madanhmuc">DM103</td>
+                        <td></td>
                         <td class="tendanhmuc">Trà trái cây</td>
                       </tr>
                       <!-- Trà sữa 4 -->
                       <tr id="danhmuc4">
-                        <td class="madanhmuc">DM104</td>
+                        <td></td>
                         <td class="tendanhmuc">Trà sữa</td>
                       </tr>
                       <!-- Đá xay 5 -->
                       <tr id="danhmuc5">
-                        <td class="madanhmuc">DM105</td>
+                        <td></td>
                         <td class="tendanhmuc">Đá xay</td>
                       </tr>
                     </tbody>
@@ -136,7 +140,8 @@
                 <div class="row my-3">
                   <div class="col-10"></div>
                   <div class="col-2">
-                    <div class="btn btn-outline-dark">Thêm mới
+                    <div id="btn_them_douong" class="btn btn-outline-dark">Thêm
+                      mới
                       <span class="fa-solid fa-plus-circle"></span>
                     </div>
                   </div>
@@ -154,47 +159,47 @@
                     </thead>
                     <tbody>
                       <tr id="douong1">
-                        <td class="madouong">DU001</td>
+                        <td></td>
                         <td class="tendouong">Cà phê đen</td>
                         <td class="giaban">30000</td>
                       </tr>
                       <tr id="douong2">
-                        <td class="madouong">DU002</td>
+                        <td></td>
                         <td class="tendouong">Cà phê Americano</td>
                         <td class="giaban">57000</td>
                       </tr>
                       <tr id="douong3">
-                        <td class="madouong">DU003</td>
+                        <td></td>
                         <td class="tendouong">Cà phê Cappuccino</td>
                         <td class="giaban">52000</td>
                       </tr>
                       <tr id="douong4">
-                        <td class="madouong">DU004</td>
+                        <td></td>
                         <td class="tendouong">Cà phê Cortado</td>
                         <td class="giaban">70000</td>
                       </tr>
                       <tr id="douong5">
-                        <td class="madouong">DU005</td>
+                        <td></td>
                         <td class="tendouong">Latte Machiato</td>
                         <td class="giaban">57000</td>
                       </tr>
                       <tr id="douong6">
-                        <td class="madouong">DU006</td>
+                        <td></td>
                         <td class="tendouong">Cà phê Dalgona</td>
                         <td class="giaban">48000</td>
                       </tr>
                       <tr id="douong7">
-                        <td class="madouong">DU007</td>
+                        <td></td>
                         <td class="tendouong">Cà phê Espresso</td>
                         <td class="giaban">30000</td>
                       </tr>
                       <tr id="douong8">
-                        <td class="madouong">DU008</td>
+                        <td></td>
                         <td class="tendouong">Latte</td>
                         <td class="giaban">60000</td>
                       </tr>
                       <tr id="douong9">
-                        <td class="madouong">DU009</td>
+                        <td></td>
                         <td class="tendouong">Mocha</td>
                         <td class="giaban">57000</td>
                       </tr>
@@ -210,7 +215,8 @@
                     <div class="input-group">
                       <input type="text" placeholder="Tìm hóa đơn"
                         class="form-control">
-                      <button class="btn btn-outline-secondary"> <span
+                      <button id="btn_timkiem_hoadon"
+                        class="btn btn-outline-secondary"> <span
                           class="fas fa-search"></span></button>
                     </div>
                   </div>
@@ -238,19 +244,19 @@
                     </thead>
                     <tbody>
                       <tr id="hoadon1">
-                        <td class="mahoadon">HD101</td>
+                        <td></td>
                         <td class="ngaytao">22/4/2024</td>
                         <td class="hinhthuc">Tại quán</td>
                         <td class="tongcong">120000 </td>
                       </tr>
                       <tr id="hoadon2">
-                        <td class="mahoadon">HD102</td>
+                        <td></td>
                         <td class="ngaytao">23/4/2024</td>
                         <td class="hinhthuc">Tại quán</td>
                         <td class="tongcong">420000 </td>
                       </tr>
                       <tr id="hoadon3">
-                        <td class="mahoadon">HD103</td>
+                        <td></td>
                         <td class="ngaytao">22/4/2024</td>
                         <td class="hinhthuc">Mang đi</td>
                         <td class="tongcong">220000 </td>
@@ -264,7 +270,8 @@
                 <div class="row my-3">
                   <div class="col-10"></div>
                   <div class="col-2">
-                    <div class="btn btn-outline-dark">Thêm mới
+                    <div id="btn_them_nguyenlieu"
+                      class="btn btn-outline-dark">Thêm mới
                       <span class="fa-solid fa-plus-circle"></span>
                     </div>
                   </div>
@@ -290,28 +297,28 @@
                         <td class="soluong">20kg</td>
                       </tr>
                       <tr id="nguyenlieu2">
-                        <td class="manguyenlieu">NL102</td>
+                        <td></td>
                         <td class="tennguyenlieu">Cà phê hạt</td>
                         <td class="ngaynhap">6/6/2024</td>
                         <td class="gianhap">2000000</td>
                         <td class="soluong">20kg</td>
                       </tr>
                       <tr id="nguyenlieu3">
-                        <td class="manguyenlieu">NL103</td>
+                        <td></td>
                         <td class="tennguyenlieu">Sữa tươi</td>
                         <td class="ngaynhap">2/6/2024</td>
                         <td class="gianhap">200000</td>
                         <td class="soluong">9 hộp</td>
                       </tr>
                       <tr id="nguyenlieu4">
-                        <td class="manguyenlieu">NL104</td>
+                        <td></td>
                         <td class="tennguyenlieu">Táo</td>
                         <td class="ngaynhap">7/6/2024</td>
                         <td class="gianhap">300000</td>
                         <td class="soluong">8kg</td>
                       </tr>
                       <tr id="nguyenlieu5">
-                        <td class="manguyenlieu">NL105</td>
+                        <td></td>
                         <td class="tennguyenlieu">Cam</td>
                         <td class="ngaynhap">8/6/2024</td>
                         <td class="gianhap">200000</td>
@@ -326,11 +333,10 @@
                 <div class="row my-3">
                   <div class="col-3">
                     <div class="input-group">
-                      <input type="text" class="form-control" id="date" />
-                      <span
-                        class="input-group-text bg-light d-block fas fa-calendar text-center"></span>
+                      <input class="form-control" type="date" name id="date"
+                        style="width: 200px; text-align: center;">
                     </div>
-                  </div>                  
+                  </div>
                 </div>
                 <div class="row text-center">
                   <table id="table_thongkedoanhthu"
@@ -345,35 +351,35 @@
                     </thead>
                     <tbody>
                       <tr id="thongke1">
-                        <td class="madouong">CP01</td>
-                        <td class="tendouong">Cà phê đen</td>
-                        <td class="giaban">30000</td>
-                        <td class="soluong">103</td>
-                        <td class="thoigian">22/5/2024</td>
-                      </tr>
+                        <td>/td>
+                          <td class="tendouong">Cà phê đen</td>
+                          <td class="giaban">30000</td>
+                          <td class="soluong">103</td>
+                          <td class="thoigian">22/5/2024</td>
+                        </tr>
                         <tr id="thongke2">
-                          <td class="madouong">DU002</td>
+                          <td></td>
                           <td class="tendouong">Cà phê Americano</td>
                           <td class="giaban">57000</td>
                           <td class="soluong">64</td>
                           <td class="thoigian">23/5/2024</td>
                         </tr>
                         <tr id="thongke3">
-                          <td class="madouong">DU003</td>
+                          <td></td>
                           <td class="tendouong">Cà phê Cappuccino</td>
                           <td class="giaban">52000</td>
                           <td class="soluong">76</td>
                           <td class="thoigian">22/5/2024</td>
                         </tr>
                         <tr id="thongke4">
-                          <td class="madouong">DU004</td>
+                          <td></td>
                           <td class="tendouong">Cà phê Cortado</td>
                           <td class="giaban">70000</td>
                           <td class="soluong">63</td>
                           <td class="thoigian">22/5/2024</td>
                         </tr>
                         <tr id="thongke5">
-                          <td class="madouong">DU005</td>
+                          <td></td>
                           <td class="tendouong">Latte Machiato</td>
                           <td class="giaban">57000</td>
                           <td class="soluong">44</td>
@@ -381,7 +387,7 @@
 
                         </tr>
                         <tr id="thongke6">
-                          <td class="madouong">DU006</td>
+                          <td></td>
                           <td class="tendouong">Cà phê Dalgona</td>
                           <td class="giaban">48000</td>
                           <td class="soluong">34</td>
@@ -389,21 +395,21 @@
 
                         </tr>
                         <tr id="thongke7">
-                          <td class="madouong">DU007</td>
+                          <td></td>
                           <td class="tendouong">Cà phê Espresso</td>
                           <td class="giaban">30000</td>
                           <td class="soluong">36</td>
                           <td class="thoigian">22/5/2024</td>
                         </tr>
                         <tr id="thongke8">
-                          <td class="madouong">DU008</td>
+                          <td></td>
                           <td class="tendouong">Latte</td>
                           <td class="giaban">60000</td>
                           <td class="soluong">50</td>
                           <td class="thoigian">23/5/2024</td>
                         </tr>
                         <tr id="thongke9">
-                          <td class="madouong">DU009</td>
+                          <td></td>
                           <td class="tendouong">Mocha</td>
                           <td class="giaban">57000</td>
                           <td class="soluong">67</td>
@@ -419,13 +425,15 @@
                 <div class="row my-3">
                   <div class="col-10"></div>
                   <div class="col-2">
-                    <div class="btn btn-outline-dark">Thêm mới
+                    <div id="btn_them_nhanvien"
+                      class="btn btn-outline-dark">Thêm mới
                       <span class="fa-solid fa-plus-circle"></span>
                     </div>
                   </div>
                 </div>
                 <div class="row text-center">
-                  <table id="table_quanlynhanvien" class="table table-striped table-bordered">
+                  <table id="table_quanlynhanvien"
+                    class="table table-striped table-bordered">
                     <thead>
                       <th>STT</th>
                       <th>Mã NV</th>
@@ -440,7 +448,7 @@
                     </thead>
                     <tbody>
                       <tr id="nhanvien1">
-                        <td class="manhanvien">NV01</td>
+                        <td></td>
                         <td class="tennhanvien">Nguyễn Thị Quỳnh</td>
                         <td class="songaycong">27</td>
                         <td class="sogiotangca">2</td>
@@ -450,7 +458,7 @@
                         <td class="tongluong"></td>
                       </tr>
                       <tr id="nhanvien2">
-                        <td class="manhanvien">NV02</td>
+                        <td></td>
                         <td class="tennhanvien">Phạm Thanh Tùng</td>
                         <td class="songaycong">28</td>
                         <td class="sogiotangca">5</td>
@@ -460,7 +468,7 @@
                         <td class="tongluong"></td>
                       </tr>
                       <tr id="nhanvien3">
-                        <td class="manhanvien">NV03</td>
+                        <td></td>
                         <td class="tennhanvien">Dương Lâm Đồng Nai</td>
                         <td class="songaycong">22</td>
                         <td class="sogiotangca">6</td>
@@ -474,10 +482,91 @@
                 </div>
               </div>
             </div>
+            <div id="themdanhmuc" class="col-10">
+              <div class="container">
+                <div class="row mt-3">
+                  <div class="col-3"><button
+                      class="btn_quaylai_danhmuc btn btn-outline-dark"><span
+                        class="fas fa-arrow-left-long"></span></button>
+                  </div>
+                </div>
+                <div class="row my-3 ms-4">
+                  <div class="col-2">Mã danh mục</div>
+                  <div class="col-2"><span id="madanhmucmoi"></span></div>
+                </div>
+                <div class="row my-4 ms-4">
+                  <div class="col-2">Tên danh mục</div>
+                  <div class="col-1"><input type="text"
+                      id="tendanhmucmoi"></div>
+                </div>
+                <div class="row ms-5">
+                  Các sản phẩm thuộc danh mục:
+                </div>
+                <div class="row text-center my-2 ms-5"
+                  style="max-height: 350px; overflow-y: auto; border: 1px solid rgb(29, 29, 29);">
+                  <table id="table_danhmuc_moi"
+                    class="table table-bordered table-striped">
+                    <thead>
+                      <th>Mã sản phẩm</th>
+                      <th>Tên sản phẩm</th>
+                      <th>Tích chọn</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-sm-2">
+                    <button id="btn_luu_danhmuc" class="btn btn-success">Hoàn
+                      tất</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="suadanhmuc" class="col-10">
+              <div class="container">
+                <div class="row mt-3">
+                  <div class="col-3"><button
+                      class=" btn_quaylai_danhmuc btn btn-outline-dark"><span
+                        class="fas fa-arrow-left-long"></span></button>
+                  </div>
+                </div>
+                <div class="row my-3 ms-4">
+                  <div class="col-2">Mã danh mục</div>
+                  <div class="col-2"><span id="madanhmucsua"></span></div>
+                </div>
+                <div class="row my-4 ms-4">
+                  <div class="col-2">Tên danh mục</div>
+                  <div class="col-1"><input type="text"
+                      id="tendanhmucsua"></div>
+                </div>
+                <div class="row ms-5">
+                  Các sản phẩm thuộc danh mục:
+                </div>
+                <div class="row text-center my-2 ms-5"
+                  style="max-height: 350px; overflow-y: auto; border: 1px solid rgb(29, 29, 29);">
+                  <table id="table_danhmuc_sua"
+                    class="table table-bordered table-striped">
+                    <thead>
+                      <th>Mã sản phẩm</th>
+                      <th>Tên sản phẩm</th>
+                      <th>Tích chọn</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-sm-2">
+                    <button id="btn_luu_danhmuc_sua"
+                      class="btn btn-success">Hoàn tất</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div id="themdanhmuc" class="col-10">
-            
-          </div>
+
         </div>
       </div>
     </body>
