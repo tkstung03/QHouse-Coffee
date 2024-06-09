@@ -22,12 +22,14 @@
 
     </head>
     <body>
-        <!-- TRANG ORDER -->
 
+        <!-- TRANG ORDER -->
         <div class="container-fluid my-3">
             <div class="row justify-content-center" style="min-height: 500px;">
                 <div class="col-4 mx-3 p-0"
                     style="background-color: aliceblue; border-radius: 10px;">
+                    
+                    <!-- List Order -->
                     <div class="row justify-content-center m-3"
                         style=" line-height: 50px; border-bottom: 1px dashed black;">
                         <div class="col-2">
@@ -35,10 +37,10 @@
                                 <button type="button" class="btn btn-primary dropdown-toggle rounded-circle" style="width: 40px; height: 40px;" data-bs-toggle="dropdown">
                                     <i class="fa-solid fa-user"></i>
                                 </button>
-                                <ul class="dropdown-menu" style="height: 40px;" >
-                                  <li style="height: 40px;"><a class="dropdown-item" href="/Login/login.html" style="height: 40px;" >Đăng xuất</a></li>
+                                <ul id="avtDropDown" class="dropdown-menu" >
+                                  <li><a class="dropdown-item" href="/Login/login.html" style="font-size: small; padding: 0 5px;">Đăng xuất</a></li>
                                 </ul>
-                              </div>
+                            </div>
                         </div>
                         <div class="col-4 p-0" style="text-align: end;">
                             <b>Order:</b>
@@ -50,20 +52,21 @@
                             <button class="btn btn-primary" onclick="newOrder()"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
+                    
+                    <!-- Sinh List Sản Phẩm -->
                     <div class="row" style="max-height: 450px; min-height: 450px; overflow-y: auto; margin: 0;">
-                        <div class="container-fluid" style="width: 95%;" id="productContainer" >
+                        <div class="container-fluid" style="width: 95%;" id="productContainer" > 
+                        </div>
                     </div>
 
-                    
-                       
-                    </div>
+                    <!-- Hình Thức Mua -->
                     <div class="container mt-auto">
                         <div class="row mt-auto justify-content-end me-auto ">
                             <div class="col-2" style="padding: 0 6px;">
-                                <button id="btnTaiQuan" class="btn btn-success active" style="width: 100%;"><i class="fa-solid fa-store"></i></button>
+                                <button id="btnTaiQuan" onclick="quayLai5()" class="btn btn-success active" style="width: 100%;"><i class="fa-solid fa-store"></i></button>
                             </div>
                             <div class="col-2" style="padding: 0 6px;">
-                                <button id="btnMangDi" class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-bag-shopping"></i></button>
+                                <button id="btnMangDi" onclick="quayLai5()" class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-bag-shopping"></i></button>
                             </div>
                             <div class="col-2" style="padding: 0 6px;">
                                 <button onclick="openGiaoHang()" id="btnGiaoHang" class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-motorcycle"></i></button>
@@ -73,6 +76,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Thu Tiền -->
                     <div class="container mt-auto">
                         <div class="row mt-auto me-auto p-2 pt-3">
                             <div class="col-6" style="text-align: end;"><b>Tổng tiền</b></div>
@@ -1637,16 +1642,20 @@
                         </div>
                     </div>
                 </div>
+                <!-- PAYMENT -->
                 <div id="payment" class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;">
                     <div class="row container-fluid p-0">
                         <div class="col-6 ps-0 " style="border-radius: 10px;">
+
+                            <!-- Tạm Tính -->
                             <div class="container-fluid" style="min-height: 430px; background-color: #f1f1f1; border-top-left-radius: 10px;">
                                 <div class="row pt-3" >
                                     <div class="col-6">
                                         <span style="font-weight: bold;">Tổng thanh toán:</span>
                                     </div>
                                     <div class="col-6" style="text-align: end;">
-                                        <label for="tongtt" style="font-weight: bold;">90000</label>
+                                        <input type="text" name="" value="0" id="tongThanhToan" 
+                                        style="font-weight: bold; border: none;background-color: transparent; color: black; text-align: end; padding-right: 10px; width: 50%; margin-right: 10px;" disabled> <b>đ</b>
                                     </div>
                                 </div>
                                 <div class="row my-2">
@@ -1654,12 +1663,28 @@
                                         <span style="font-weight: bold;">Trước thuế:</span>
                                     </div>
                                     <div class="col-6" style="text-align: end;">
-                                        <label for="truocthue" style="font-weight: bold;">90000</label>
+                                        <input type="text" name="" value="0" id="truocThue"
+                                        style="font-weight: bold; border: none;background-color: transparent; color: black; text-align: end; padding-right: 10px; width: 50%; margin-right: 10px;" disabled> <b>đ</b>
                                     </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-6">
+                                        <span style="font-weight: bold;">Sau thuế:</span>
+                                    </div>
+                                    <div class="col-6" style="text-align: end;">
+                                        <input type="text" name="" value="0" id="sauThue"
+                                        style="font-weight: bold; border: none;background-color: transparent; color: black; text-align: end; padding-right: 10px; width: 50%; margin-right: 10px;" disabled> <b>đ</b>
+                                    </div>
+                                </div>
+                                <div class="row my-2 ps-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="increaseCheckbox" onchange="increaseTotalAmount()" />
+                                        <label for="increaseCheckbox">VAT (10%)</label>
+                                      </div>
                                 </div>
                             </div>
                             
-                            
+                            <!-- Chọn Nhanh -->
                             <div class="row mt-auto p-2">
                                 <div class="col-6 px-2 py-2">
                                     <button id="btn-80k" class="btn btn-outline-primary" style="width: 100%; font-weight: bold;" onclick="updateInput('72000')">72.000đ</button>
@@ -1681,7 +1706,8 @@
                         
                         <div class="col-6">
                             <div class="container-fluid">
-                                <div class="container-fluid" style="min-height: 432px;">
+                                <!-- Thu -->
+                                <div class="container-fluid" style="min-height: 400px;">
                                     <div class="row pt-3" >
                                         <div class="col-6">
                                             <span style="font-weight: bold;">Còn phải thu:</span>
@@ -1711,42 +1737,46 @@
                                     </div>
                                 </div>
                                 
+                                <!-- Máy Tính -->
                                 <div class="row mt-auto">
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(7)">7</button>
+                                    <div class="col-12 mb-2 d-grid">
+                                        <button class="btn btn-primary" style="font-weight: bold;">THANH TOÁN</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(8)">8</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(7)">7</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(9)">9</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(8)">8</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(4)">4</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(9)">9</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(5)">5</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(4)">4</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(6)">6</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(5)">5</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(1)">1</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(6)">6</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(2)">2</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(1)">1</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(3)">3</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(2)">2</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-danger btn-number" style="width: 100%; font-weight: bold;" onclick="Xoa()">C</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(3)">3</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-outline-dark btn-number" style="width: 100%; font-weight: bold;" onclick="noiChuoi(0)">0</button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-danger btn-number" style="font-weight: bold;" onclick="Xoa()">C</button>
                                     </div>
-                                    <div class="col-4 mb-2">
-                                        <button class="btn btn-warning btn-number" style="width: 100%; font-weight: bold;" onclick="XoaKyTuCuoi()"><i class="fa-solid fa-delete-left"></i></button>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-outline-dark btn-number" style="font-weight: bold;" onclick="noiChuoi(0)">0</button>
+                                    </div>
+                                    <div class="col-4 mb-2 d-grid">
+                                        <button class="btn btn-warning btn-number" style="font-weight: bold;" onclick="XoaKyTuCuoi()"><i class="fa-solid fa-delete-left"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -1760,31 +1790,37 @@
                             </a>
                         </div>
                         <div class="col container-fluid">
-                            <div class="row justify-content-end me-4">
+                            <div class="row justify-content-end me-3">
                                 <div class="dropup col-3 px-1 pt-2 justify-content-end">                       
                                         <button type="button" id="dropdownMenuButton" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
                                         style="width: 100%; height: 48px; font-weight: bold;">
                                           KHÁC 
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #0d6efd;">
-                                          <li><a class="dropdown-item" href="#"  style="width: 100%; height: 48px; color: white; font-weight: bold;" onclick="selectItem('ATM')">ATM</a></li>
-                                          <li><a class="dropdown-item" href="#" style="width: 100%; height: 48px; color: white; font-weight: bold;" onclick="selectItem('VISA')">VISA</a></li>
-                                          <li><a class="dropdown-item" href="#" style="width: 100%; height: 48px; color: white; font-weight: bold;" onclick="selectItem('MOMO')">MOMO</a></li>
+                                          <li><a class="dropdown-item" href="#" id="btnVisa"
+                                            style="width: 100%; height: 48px; color: white; font-weight: bold;" >VISA <i class="fa-brands fa-cc-visa"></i></a></li>
+                                          <li><a class="dropdown-item" href="#" id="btnCard"
+                                            style="width: 100%; height: 48px; color: white; font-weight: bold;" >CREDIT CARD <i class="fa-solid fa-credit-card"></i></a></li>
+                                          <li><a class="dropdown-item" href="#" id="btnMomo"
+                                             style="width: 100%; height: 48px; color: white; font-weight: bold;" >MOMO
+                                            <img src="img/momo_icon_square_whitebg.svg" alt="" width="20px">
+                                          </a></li>
                                         </ul>     
                                 </div>
                                 <div class="col-3 px-1 pt-2 justify-content-end">
-                                    <button class="btn btn-primary" style="width: 100%; height: 48px; font-weight: bold;">VIETTELPAY</button>
+                                    <button class="btn btn-primary" id="vtPay" style="width: 100%; height: 48px; font-weight: bold;" onclick="openViettelPay()">VIETTELPAY</button>
                                 </div>
                                 <div class="col-3 px-1 pt-2 justify-content-end">
-                                    <button class="btn btn-primary" style="width: 100%; height: 48px; font-weight: bold;">ZALOPAY</button>
+                                    <button class="btn btn-primary" id="zlPay" style="width: 100%; height: 48px; font-weight: bold;" onclick="openZaloPay()">ZALOPAY</button>
                                 </div>
                                 <div class="col-3 px-1 pt-2 justify-content-end">
-                                    <button class="btn btn-success" style="width: 100%; height: 48px; font-weight: bold;">TIỀN MẶT</button>
+                                    <button class="btn btn-success active" id="tienMat" style="width: 100%; height: 48px; font-weight: bold;">TIỀN MẶT <i class="fa-solid fa-money-bill-wave"></i></button>
                                 </div>
                             </div>   
                         </div>
                     </div>
                 </div> 
+                <!-- SHIP INFOMATION -->
                 <div id="shipInfo" class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;">
                     <div class="container-fluid" style="min-height: 600px;">
                         <div class="row mt-3 container">
@@ -1873,9 +1909,99 @@
                                 </div>
                             </div>   
                         </div>
+                    </div>
                 </div>
+                <!-- VISA -->
+                <div id="visa" class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;"></div>
+                <!-- CREDIT CARD -->
+                <div id="creditCard" class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;"></div>
+                <!-- MOMO -->
+                <div id="momo" class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;"></div>
+                <!-- VIETTELPAY -->
+                <div id="viettelPay" class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;">
+                    <div class="row container justify-content-center" style="min-height: 600px;">
+                        <div class="container-fluid mt-3">
+                            <h4>QUÉT MÃ QR CODE ĐỂ THANH TOÁN QUA <span><img src="img/vtpay-logo.png" alt="zalopay logo" style="width: 100px;"></span></h4>
+                        </div>
+                        <div class="col-6" style="text-align: center;">
+                            <img src="img/vtpay-qr.jpg" class="rounded" alt="" width="80%">
+                            <div class="countdown" >
+                                <p>Thời gian quét mã QR Code để thanh toán còn: </p>
+                                <p id="timer">01:00</p>
+                            </div>
+                        </div>
+                        <div class="col-5" >
+                            <p><b>Bước 1:</b> Mở ứng dụng Viettel Money trên thiết bị của bạn</p>
+                            <p><b>Bước 2:</b> Chọn "Thanh toán" và quét mã QR Code xuất hiện trên màn hình</p>
+                            <p><b>Bước 3:</b> Xác nhận thanh toán ở trong ứng dụng Viettel Money</p>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 px-3 pt-4 justify-content-start">
+                            <a id="quaylai2" onclick="quayLai4()" class="text-decoration-none" style="font-weight: bold; font-size: large; cursor: pointer;">
+                                <i class="fa-solid fa-chevron-left"></i>
+                                QUAY LẠI
+                            </a>
+                        </div>
+                        <div class="col container-fluid">
+                            <div class="row justify-content-end me-4">
+                                
+                                <div class="col-3 px-1 pt-2 justify-content-end">
+                                    <button class="btn btn-primary hoanTat" style="width: 100%; height: 48px; font-weight: bold;" onclick="showHoanTatDialog()">HOÀN TẤT</button>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+                <!-- ZALOPAY -->
+                <div id="zaloPay" class="col-7 mx-2" style="background-color: aliceblue; border-radius: 10px;">
+                    <div class="row container justify-content-center" style="min-height: 600px;">
+                        <div class="container-fluid">
+                            <h4>QUÉT MÃ QR CODE ĐỂ THANH TOÁN QUA <span><img src="img/ZaloPay-ngang.png" alt="zalopay logo" style="width: 150px;"></span></h4>
+                        </div>
+                        <div class="col-6" style="text-align: center;">
+                            <img src="img/zalopay-qr.jpg" alt="" width="80%">
+                            <div class="countdown" >
+                                <p>Thời gian quét mã QR Code để thanh toán còn: </p>
+                                <p id="timer">01:00</p>
+                            </div>
+                        </div>
+                        <div class="col-5" >
+                            <p><b>Bước 1:</b> Mở ứng dụng ZaloPat trên thiết bị của bạn</p>
+                            <p><b>Bước 2:</b> Chọn "Thanh toán" và quét mã QR Code xuất hiện trên màn hình</p>
+                            <p><b>Bước 3:</b> Xác nhận thanh toán ở trong ứng dụng ZaloPay</p>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 px-3 pt-4 justify-content-start">
+                            <a id="quaylai2" onclick="quayLai3()" class="text-decoration-none" style="font-weight: bold; font-size: large; cursor: pointer;">
+                                <i class="fa-solid fa-chevron-left"></i>
+                                QUAY LẠI
+                            </a>
+                        </div>
+                        <div class="col container-fluid">
+                            <div class="row justify-content-end me-4">
+                                
+                                <div class="col-3 px-1 pt-2 justify-content-end">
+                                    <button class="btn btn-primary hoanTat" style="width: 100%; height: 48px; font-weight: bold;" onclick="showHoanTatDialog()">HOÀN TẤT</button>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            
             </div>
         </div>
+
+        <!-- MESSAGE DIALOG -->
+        <div id="dialogOverlay"></div>
+        <div id="dialogBox">
+            <div id="dialogContent">
+                <p id="dialogMessage"></p>
+                <button id="dialogOK" class="btn btn-lg btn-primary" onclick="closeDialog()">OK</button>
+            </div>
+        </div>
+
     </body>
     <script src="/Home/script.js"></script>
 

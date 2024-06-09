@@ -2,6 +2,9 @@ var btnThuTienToggle = document.getElementById('btnThuTien');
 var trangMenu = document.getElementById('menu');
 var trangThanhToan = document.getElementById('payment');
 var trangGiaoHang = document.getElementById('shipInfo');
+var trangZaloPay = document.getElementById('zaloPay');
+var trangViettelPay = document.getElementById('viettelPay');
+
 
 btnThuTienToggle.addEventListener('click', function(){
     loadProductCards();
@@ -11,37 +14,73 @@ btnThuTienToggle.addEventListener('click', function(){
 });
 
 function openGiaoHang() {
-    var activeButton = document.querySelector('.btn.btn-success.active');
-    if (activeButton) {
-        activeButton.classList.remove('active');
-    }
     var btn = document.getElementById('btnGiaoHang'); 
     btn.classList.add('active');  
 
     trangMenu.style.display = 'none';
     trangGiaoHang.style.display = 'block';
 }
+function openZaloPay() {
+    var btn = document.getElementById('zlPay'); 
+    btn.classList.add('active');  
+
+    trangThanhToan.style.display = 'none';
+    trangZaloPay.style.display = 'block';
+}
+function openViettelPay() {
+    var btn = document.getElementById('vtPay'); 
+    btn.classList.add('active');  
+
+    trangThanhToan.style.display = 'none';
+    trangViettelPay.style.display = 'block';
+}
 
 function quayLai() {
-    if (trangMenu.style.display === 'none') {
-        trangMenu.style.display = 'block';
-        trangThanhToan.style.display = 'none';
-      } else {
-        trangMenu.style.display = 'none';
-        trangThanhToan.style.display = 'block';
-      }
+    trangThanhToan.style.display = 'none';
+    trangMenu.style.display = 'block';
 
 }
 function quayLai2() {
-    if (trangMenu.style.display === 'none') {
-        trangMenu.style.display = 'block';
-        trangGiaoHang.style.display = 'none';
-      } else {
-        trangMenu.style.display = 'none';
-        trangGiaoHang.style.display = 'block';
-      }
+    trangGiaoHang.style.display = 'none';
+    trangMenu.style.display = 'block';
 
 }
+function quayLai3() {
+    trangZaloPay.style.display = 'none';
+    trangThanhToan.style.display = 'block';
+}
+function quayLai4() {
+    trangViettelPay.style.display = 'none';
+    trangThanhToan.style.display = 'block';
+}
+function quayLai5() {
+    trangGiaoHang.style.display = 'none';
+    trangThanhToan.style.display = 'block';
+}
+function showHoanTatDialog() {
+    var dialogOverlay = document.getElementById("dialogOverlay");
+    var dialogBox = document.getElementById("dialogBox");
+    var dialogMessage = document.getElementById("dialogMessage");
+  
+    dialogMessage.innerText = "THANH TOÁN HOÀN TẤT!";
+  
+    dialogOverlay.style.display = "block";
+    dialogBox.style.display = "block";
+
+    
+  }
+  
+  function closeDialog() {
+    var dialogOverlay = document.getElementById("dialogOverlay");
+    var dialogBox = document.getElementById("dialogBox");
+  
+    dialogOverlay.style.display = "none";
+    dialogBox.style.display = "none";
+  
+    trangZaloPay.style.display = 'none';
+    trangMenu.style.display = 'block';
+  }
+
 var cards = document.querySelectorAll('.card');
 
 for (var i = 0; i < cards.length; i++) {
@@ -84,7 +123,8 @@ function createProductCard(productInfo) {
     productImage.style.marginRight = '10px';
 
     var productNamePriceContainer = document.createElement('div');
-    productNamePriceContainer.classList.add('col-8');
+    productNamePriceContainer.classList.add('col-7');
+    productNamePriceContainer.style.padding = '0';
 
 
     var namePriceRow = document.createElement('div');
@@ -101,6 +141,7 @@ function createProductCard(productInfo) {
     var productPriceColumn = document.createElement('div');
     productPriceColumn.classList.add('col-4');
     productPriceColumn.style.alignItems = 'start';
+    
 
 
     var productPriceInput = document.createElement('input');
@@ -114,7 +155,7 @@ function createProductCard(productInfo) {
     productPriceInput.disabled = true;
 
     var quantityColumn = document.createElement('div');
-    quantityColumn.classList.add('col-8');
+    quantityColumn.classList.add('col-12');
     quantityColumn.style.display = 'flex';
     quantityColumn.style.alignItems = 'center';
 
@@ -133,9 +174,9 @@ function createProductCard(productInfo) {
     quantityInput.style.border = 'none'
 
     var deleteButtonColumn = document.createElement('div');
-    deleteButtonColumn.classList.add('col-1');
+    deleteButtonColumn.classList.add('col-2');
     deleteButtonColumn.style.display = 'flex';
-    deleteButtonColumn.style.justifyContent = 'start';
+    deleteButtonColumn.style.justifyContent = 'center';
     deleteButtonColumn.style.alignItems = 'start';
 
     var deleteButton = document.createElement('button');
@@ -217,9 +258,41 @@ function loadProductCards() {
 
     var thuInput = document.getElementById('thu');
     thuInput.value = totalAmount.toFixed(0);
+    var tongTT = document.getElementById('tongThanhToan');
+    tongTT.value = totalAmount.toFixed(0);
 }
 
     loadProductCards();
+
+    function increaseTotalAmount() {
+        var increaseCheckbox = document.getElementById('increaseCheckbox');
+        var thuInput = document.getElementById('thu');
+        var truocThueInput = document.getElementById('truocThue');
+        var sauThueInput = document.getElementById('sauThue');
+        var productCards = JSON.parse(localStorage.getItem('productCards'));
+      
+        // Tính toán giá tiền ban đầu
+        var originalAmount = 0;
+        productCards.forEach(function(productInfo) {
+          originalAmount += parseFloat(productInfo.price);
+        });
+      
+        var truocThueAmount = originalAmount.toFixed(0);
+        if (increaseCheckbox.checked) {
+          // Tính toán giá tiền mới sau khi tăng 10%
+          var increasedAmount = originalAmount * 1.1; // Tăng 10%
+          var sauThueAmount = increasedAmount.toFixed(0);
+      
+          truocThueInput.value = truocThueAmount;
+          thuInput.value = sauThueAmount;
+          sauThueInput.value = sauThueAmount;
+        } else {
+          // Nếu checkbox không được tích, giữ nguyên giá trị ban đầu
+          var originalAmountFormatted = originalAmount.toFixed(0);
+          thuInput.value = originalAmountFormatted;
+          sauThueInput.value = originalAmountFormatted;
+        }
+      }
     function newOrder() {
         var orderInput = document.getElementById('orderNumber');
         var currentOrder = parseFloat(orderInput.value);
@@ -234,8 +307,10 @@ function loadProductCards() {
     
         var tongInput = document.getElementById('tong');
         var thuInput = document.getElementById('thu');
+        var tongTT = document.getElementById('tongThanhToan');
         tongInput.value = '0';
         thuInput.value = '0';
+        tongTT.value = '0';
     }
 
 // Khai báo biến global để lưu tổng giá tiền
@@ -256,6 +331,8 @@ function deleteProduct(productInfo) {
 
     var thuInput = document.getElementById('thu');
     thuInput.value = totalAmount.toFixed(0);
+    var tongTT = document.getElementById('tongThanhToan');
+    tongTT.value = totalAmount.toFixed(0);
 
     productCardContainer.remove();
     console.log('Xoá sản phẩm: ', productInfo);
@@ -276,6 +353,7 @@ function deleteProduct(productInfo) {
     // Lưu danh sách sản phẩm đã xoá vào Local Storage
     localStorage.setItem('productCards', JSON.stringify(updatedProductCards));
 }
+
 
 // Hàm xử lý sự kiện khi bấm vào card
 
@@ -339,6 +417,11 @@ $(document).ready(function() {
         refund.value = khachtra - tong;
         $("#tralai").text(refund);
     });
+    $("button").click(function() {
+        $("button").removeClass("active");
+        $(this).addClass("active");
+    });
+
 }); 
 function updateInput(value) {
     document.getElementById('khachdua').value = value;
@@ -346,9 +429,29 @@ function updateInput(value) {
     var tralai = value - tong;
     document.getElementById('tralai').value = tralai;
 }      
-function selectItem(item) {
-    document.getElementById('dropdownMenuButton').innerText = item;
-} 
-
+window.onload = function() {
+    var minutes = 1; // Số phút cần đếm ngược
+    var seconds = 0; // Số giây cần đếm ngược
+    var timer = document.getElementById('timer');
+  
+    var countdown = setInterval(function() {
+      if (seconds === 0) {
+        if (minutes === 0) {
+          clearInterval(countdown);
+          timer.textContent = "Hết giờ!";
+          return;
+        } else {
+          minutes--;
+          seconds = 59;
+        }
+      } else {
+        seconds--;
+      }
+  
+      var displayMinutes = minutes < 10 ? "0" + minutes : minutes;
+      var displaySeconds = seconds < 10 ? "0" + seconds : seconds;
+      timer.textContent = displayMinutes + ":" + displaySeconds;
+    }, 1000);
+  };
 
 
