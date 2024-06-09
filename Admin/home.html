@@ -28,8 +28,8 @@
               data-bs-toggle="dropdown">
               <span class="fa-solid fa-bars text-white"></span>
             </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Thu ngân</a></li>
+            <ul id="dropMenu" class="dropdown-menu">
+              <li><a class="dropdown-item" href="/Home/home.html">Thu ngân</a></li>
               <li><a class="dropdown-item" href="#">Quản trị</a></li>
             </ul>
             <a class="navbar-brand text-white mx-4">QHOUSE COFFEE</a>
@@ -38,7 +38,7 @@
             <button type="button" class="btn btn-sm dropdown-toggle text-white"
               data-bs-toggle="dropdown">
               <span class="fas fa-user-circle text-white mx-2"></span>
-              <span id="username" class="text-white"></span>
+              <span id="username" class="text-white" style="font-weight: bold;"></span>
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
@@ -49,7 +49,9 @@
       </header>
       <div class="container-fluid">
         <div class="row" style="height: 100vh;">
-          <div class="col-2" id="menu_doc">
+
+          <!-- SIDEBAR -->
+          <div class="col-2" id="menu_doc" style="padding-right: 0;">
             <ul class="nav nav-tabs d-flex flex-column nav-pills"
               role="tablist">
               <li class="nav-item">
@@ -78,6 +80,8 @@
               </li>
             </ul>
           </div>
+
+          <!-- TABS -->
           <div id="noidung" class="col-10 ">
             <div class="tab-content">
               <!-- Tab danh mục -->
@@ -475,6 +479,7 @@
               </div>
             </div>
           </div>
+
           <div id="themdanhmuc" class="col-10">
             
           </div>

@@ -10,6 +10,21 @@ body{
     background-position-y: 0px;
     height: 100%;
 }
+div.container-fluid{
+    --bs-gutter-x: 0;
+}
+.dropdown-menu.show{
+    background-color: antiquewhite;
+}
+a.dropdown-item{
+    font-weight: bold;
+    color: rgba(60, 29, 11, 0.8); 
+}
+a.dropdown-item:hover{
+    font-weight: bold;
+    color: chocolate;
+    background-color: transparent;
+} 
 .navbar{
     background-color: rgba(60, 29, 11, 0.8);
 }
