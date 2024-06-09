@@ -31,8 +31,9 @@ function checkLogin() {
       if (password === account.password) {
         // Kiểm tra vai trò
         if (account.role === "admin") {
-          // Vai trò admin => chuyển hướng đến trang quản trị
+          sessionStorage.setItem("username_admin", account.username);
           window.location.href = "../Admin/home.html";
+          // Vai trò admin => chuyển hướng đến trang quản trị
         } else if (account.role === "employee") {
           // Vai trò nhân viên => chuyển hướng đến trang nhân viên
           window.location.href = "../Home/home.html";
