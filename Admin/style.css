@@ -30,9 +30,39 @@ body {
 #menu_doc {
 	background-color: antiquewhite;
 }
+#chitietdanhmuc {
+	display: none;
+}
 #themdanhmuc {
 	display: none;
 }
 #suadanhmuc {
+	display: none;
+}
+#chitietdouong {
+	display: none;
+}
+#themdouong {
+	display: none;
+}
+#suadouong {
+	display: none;
+}
+#chitietnguyenlieu {
+	display: none;
+}
+#themnguyenlieu {
+	display: none;
+}
+#suanguyenlieu {
+	display: none;
+}
+#chitietnhanvien {
+	display: none;
+}
+#themnhanvien {
+	display: none;
+}
+#suanhanvien {
 	display: none;
 }
