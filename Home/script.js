@@ -4,7 +4,8 @@ var trangThanhToan = document.getElementById('payment');
 var trangGiaoHang = document.getElementById('shipInfo');
 var trangZaloPay = document.getElementById('zaloPay');
 var trangViettelPay = document.getElementById('viettelPay');
-
+var trangTheNH = document.getElementById('creditCard');
+var trangMOMO = document.getElementById('momo')
 
 btnThuTienToggle.addEventListener('click', function(){
     loadProductCards();
@@ -12,12 +13,26 @@ btnThuTienToggle.addEventListener('click', function(){
         trangThanhToan.style.display = 'block';
     
 });
-
+function openMenu(){
+    if(trangGiaoHang.style.display === 'block'){
+        trangGiaoHang.style.display = 'none';
+        trangThanhToan.style.display = 'block';
+    }
+    else{
+        trangGiaoHang.style.display = 'none';
+    }
+}
 function openGiaoHang() {
     var btn = document.getElementById('btnGiaoHang'); 
     btn.classList.add('active');  
 
+
     trangMenu.style.display = 'none';
+    trangThanhToan.style.display = 'none';
+    trangViettelPay.style.display = 'none';
+    trangZaloPay.style.display = 'none';
+    trangTheNH.style.display = 'none';
+    trangMOMO.style.display = 'none';
     trangGiaoHang.style.display = 'block';
 }
 function openZaloPay() {
@@ -33,6 +48,21 @@ function openViettelPay() {
 
     trangThanhToan.style.display = 'none';
     trangViettelPay.style.display = 'block';
+}
+function openTheNH() {
+    var btn = document.getElementById('btnVisa'); 
+    btn.classList.add('active');  
+
+    trangThanhToan.style.display = 'none';
+    trangTheNH.style.display = 'block';
+}
+
+function openMOMO() {
+    var btn = document.getElementById('btnMomo'); 
+    btn.classList.add('active');  
+
+    trangThanhToan.style.display = 'none';
+    trangMOMO.style.display = 'block';
 }
 
 function quayLai() {
@@ -57,6 +87,16 @@ function quayLai5() {
     trangGiaoHang.style.display = 'none';
     trangThanhToan.style.display = 'block';
 }
+function quayLai6() {
+    trangTheNH.style.display = 'none';
+    trangThanhToan.style.display = 'block';
+}
+function quayLai7() {
+    trangMOMO.style.display = 'none';
+    trangThanhToan.style.display = 'block';
+}
+
+
 function showHoanTatDialog() {
     var dialogOverlay = document.getElementById("dialogOverlay");
     var dialogBox = document.getElementById("dialogBox");
@@ -66,8 +106,6 @@ function showHoanTatDialog() {
   
     dialogOverlay.style.display = "block";
     dialogBox.style.display = "block";
-
-    
   }
   
   function closeDialog() {
@@ -76,7 +114,10 @@ function showHoanTatDialog() {
   
     dialogOverlay.style.display = "none";
     dialogBox.style.display = "none";
-  
+    trangThanhToan.style.display = 'none';
+    trangViettelPay.style.display = 'none';
+    trangTheNH.style.display = 'none';
+    trangMOMO.style.display = 'none';
     trangZaloPay.style.display = 'none';
     trangMenu.style.display = 'block';
   }
@@ -225,6 +266,14 @@ function saveProductCard(productInfo) {
 
     // Lưu danh sách sản phẩm vào Local Storage
     localStorage.setItem('productCards', JSON.stringify(productCards));
+}
+function deleteAll() {
+    // Clear the product container on the screen
+    var container = document.getElementById('productContainer');
+    container.innerHTML = '';
+
+    // Clear the product data in storage
+    localStorage.removeItem('productCards');
 }
 function loadProductCards() {
     // Lấy danh sách các thẻ sản phẩm từ Local Storage
@@ -422,6 +471,51 @@ $(document).ready(function() {
         $(this).addClass("active");
     });
 
+    // validate form ship hàng
+    $("#btnLuu").click(function() {
+        // Validate fields
+        let isValid = true;
+
+        // Validate Họ tên KH
+        let ten = $("#txtTen").val();
+        if (ten.trim() === "") {
+            $("#errorTen").text("Họ tên không được bỏ trống");
+            isValid = false;
+        } else {
+            $("#errorTen").text("");
+        }
+
+        // Validate Số điện thoại
+        let sdt = $("#txtSDT").val();
+        if (sdt.trim() === "") {
+            $("#errorSDT").text("Số điện thoại không được bỏ trống");
+            isValid = false;
+        } else if (!/^\d+$/.test(sdt)) { // Check if it's only digits
+            $("#errorSDT").text("Số điện thoại phải là số");
+            isValid = false;
+        } else {
+            $("#errorSDT").text("");
+        }
+
+        // Validate Địa chỉ GH
+        let diaChi = $("#txtDiaChi").val();
+        if (diaChi.trim() === "") {
+            $("#errorDiaChi").text("Địa chỉ không được bỏ trống");
+            isValid = false;
+        } else {
+            $("#errorDiaChi").text("");
+        }
+
+        // If all fields are valid, proceed with saving
+        if (isValid) {
+            // Your code to save data goes here
+            // Example: Display a success message
+            alert("Lưu thành công!");
+            $("#errorTen").text("");
+            $("#errorSDT").text("");
+            $("#errorDiaChi").text("");
+        }
+    });
 }); 
 function updateInput(value) {
     document.getElementById('khachdua').value = value;
@@ -432,13 +526,17 @@ function updateInput(value) {
 window.onload = function() {
     var minutes = 1; // Số phút cần đếm ngược
     var seconds = 0; // Số giây cần đếm ngược
-    var timer = document.getElementById('timer');
+    var timer1 = document.getElementById('timer1');
+    var timer2 = document.getElementById('timer2');
+    var timer3 = document.getElementById('timer3');
   
     var countdown = setInterval(function() {
       if (seconds === 0) {
         if (minutes === 0) {
           clearInterval(countdown);
-          timer.textContent = "Hết giờ!";
+          timer1.textContent = "Hết giờ!";
+          timer2.textContent = "Hết giờ!";
+          timer3.textContent = "Hết giờ!";
           return;
         } else {
           minutes--;
@@ -450,8 +548,11 @@ window.onload = function() {
   
       var displayMinutes = minutes < 10 ? "0" + minutes : minutes;
       var displaySeconds = seconds < 10 ? "0" + seconds : seconds;
-      timer.textContent = displayMinutes + ":" + displaySeconds;
+      timer1.textContent = displayMinutes + ":" + displaySeconds;
+      timer2.textContent = displayMinutes + ":" + displaySeconds;
+      timer3.textContent = displayMinutes + ":" + displaySeconds;
     }, 1000);
   };
+
 
 

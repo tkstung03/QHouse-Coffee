@@ -25,12 +25,9 @@ body{
     display: none;
 }
 #menu{
-    display: none;
+    display: block;
 }
 #payment{
-    display: none;
-}
-#visa{
     display: none;
 }
 #creditCard{
@@ -40,7 +37,7 @@ body{
     display: none;
 }
 #viettelPay{
-    display: block;
+    display: none;
 }
 #zaloPay{
     display: none;
