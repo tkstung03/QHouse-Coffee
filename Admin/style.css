@@ -6,7 +6,10 @@
 body {
 	font-family: "Times New Roman", Times, serif;
 }
-#btnAvatar::after{
+#bgnd {
+	background-color: rgb(252, 248, 244);
+}
+#btnAvatar::after {
 	display: none;
 }
 .navbar {
@@ -21,6 +24,9 @@ body {
 .nav-item .nav-link.active.user-select-none.py-4 {
 	background-color: rgba(60, 29, 11, 0.8);
 }
+.nav-item:hover{
+	background-color: rgb(247, 218, 184);
+}
 .nav-item a {
 	color: rgba(60, 29, 11, 0.8);
 }
@@ -28,7 +34,7 @@ body {
 	color: chocolate;
 }
 #menu_doc {
-	background-color: antiquewhite;
+	background-color: rgb(250, 231, 207);
 }
 #chitietdanhmuc {
 	display: none;
