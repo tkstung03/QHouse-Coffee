@@ -10,6 +10,11 @@ var trangMOMO = document.getElementById('momo')
 btnThuTienToggle.addEventListener('click', function(){
     loadProductCards();
         trangMenu.style.display = 'none';
+        trangViettelPay.style.display = 'none';
+        trangZaloPay.style.display = 'none';
+        trangTheNH.style.display = 'none';
+        trangMOMO.style.display = 'none';
+        trangGiaoHang.style.display = 'none';
         trangThanhToan.style.display = 'block';
     
 });

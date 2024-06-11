@@ -5,9 +5,9 @@
 }
 body {
 	font-family: "Times New Roman", Times, serif;
-	background-size: cover;
-	background-position-y: 0px;
-	height: 100%;
+}
+#btnAvatar::after{
+	display: none;
 }
 .navbar {
 	background-color: rgba(60, 29, 11, 0.8);
