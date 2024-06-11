@@ -30,14 +30,14 @@
           <div class="dropdown">
             <button type="button" class="btn dropdown-toggle text-white"
               data-bs-toggle="dropdown">
-              <span class="fa-solid fa-bars text-white"></span>
+              <span class="fa-solid fa-house text-white"></span>
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/Home/home.html">Thu ngân</a></li>
             </ul>
             <a class="navbar-brand text-white mx-4">QHOUSE COFFEE</a>
           </div>
-          <div class="dropdown mx-3">
+          <div class="dropdown mx-2">
             <button type="button" id="btnAvatar" class="btn btn-lg dropdown-toggle text-white"
               data-bs-toggle="dropdown" aria-expanded="false">
               <span class="fas fa-user-circle text-white mx-2"></span>
@@ -51,31 +51,31 @@
         </div>
       </header>
       <div class="container-fluid">
-        <div class="row" style="height: 91vh;">
+        <div class="row" style="height: 89vh;">
           <div class="col-2" id="menu_doc" style="padding: 0;">
             <ul class="nav nav-tabs d-flex flex-column nav-pills"
               role="tablist">
-              <li class="nav-item">
+              <li id="btn_danhmuc" class="nav-item">
                 <a class="nav-link active user-select-none py-4"
                   data-bs-toggle="tab" data-bs-target="#danhmuc"><i class="fa-solid fa-list me-2"></i> <span>Quản lý danh mục</span></a>
               </li>
-              <li class="nav-item">
+              <li id="btn_douong" class="nav-item">
                 <a class="nav-link user-select-none py-4" data-bs-toggle="tab"
                   data-bs-target="#douong" style="font-weight: bold;"><i class="fa-solid fa-mug-saucer me-2"></i> <span>Quản lý đồ uống</span></a>
               </li>
-              <li class="nav-item">
+              <li id="btn_hoadon" class="nav-item">
                 <a class="nav-link user-select-none py-4" data-bs-toggle="tab"
                   data-bs-target="#hoadon"><i class="fa-solid fa-file-invoice-dollar ms-1 me-3"></i><span>Quản lý hóa đơn</span></a>
               </li>
-              <li class="nav-item">
+              <li id="btn_nguyenlieu" class="nav-item">
                 <a class="nav-link user-select-none py-4" data-bs-toggle="tab"
                   data-bs-target="#nguyenlieu"><i class="fa-solid fa-leaf me-3"></i><span>Quản lý nguyên liệu</span></a>
               </li>
-              <li class="nav-item">
+              <li id="btn_thongkedoanhthu" class="nav-item">
                 <a class="nav-link user-select-none py-4" data-bs-toggle="tab"
                   data-bs-target="#thongkedoanhthu"><i class="fa-solid fa-square-poll-vertical me-3"></i><span>Thống kê doanh thu</span></a>
               </li>
-              <li class="nav-item">
+              <li id="btn_quanlynhanvien" class="nav-item">
                 <a class="nav-link user-select-none py-4" data-bs-toggle="tab"
                   data-bs-target="#quanlynhanvien"><i class="fa-solid fa-user-group me-2"></i><span> Quản lý nhân viên</span></a>
               </li>
@@ -95,11 +95,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row" style="max-height: 450px; overflow-y: auto;">
                   <!-- Bảng danh mục -->
                   <table id="table_danhmuc"
-                    class="table table-striped table-bordered">
-                    <thead class="text-center">
+                    class="table table-striped table-bordered ">
+                    <thead class="text-center ">
                       <th>STT</th>
                       <th>Mã danh mục</th>
                       <th>Tên danh mục</th>
@@ -148,7 +148,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row text-center">
+                <div class="row text-center" style="max-height: 450px; overflow-y: auto;">
                   <!-- Bảng đồ uống -->
                   <table id="table_douong"
                     class="table table-striped table-bordered">
@@ -234,7 +234,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row text-center">
+                <div class="row text-center" style="max-height: 450px; overflow-y: auto;">
                   <!-- Bảng hóa đơn -->
                   <table id="table_hoadon"
                     class="table table-striped table-bordered">
@@ -345,7 +345,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row text-center">
+                <div class="row text-center" style="max-height: 450px; overflow-y: auto;">
                   <table id="table_nguyenlieu"
                     class="table table-striped table-bordered">
                     <thead>
@@ -400,18 +400,18 @@
               <!-- Tab thống kê doanh thu -->
               <div id="thongkedoanhthu" class="container tab-pane">
                 <div class="row my-3">
-                  <div class="col-5">
-                    <div class="input-group">
+                  <div class="col-6">
+                    <div class="input-group align-items-center">
                       <span>Từ ngày:</span>
                       <input class="form-control mx-3" type="date" id="date"
-                        style="width: 100px; text-align: center;">
+                        style="width: 130px; text-align: center; border-radius: 5px;">
                         <span>Đến ngày:</span>
                       <input class="form-control mx-3" type="date" id="date"
-                        style="width: 100px; text-align: center;">
+                        style="width: 130px; text-align: center; border-radius: 5px;">
                     </div>
                   </div>
                 </div>
-                <div class="row text-center">
+                <div class="row text-center" style="max-height: 450px; overflow-y: auto;">
                   <table id="table_thongkedoanhthu"
                     class="table table-striped table-bordered">
                     <thead>
@@ -504,7 +504,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row text-center">
+                <div class="row text-center" style="max-height: 450px; overflow-y: auto;">
                   <table id="table_quanlynhanvien"
                     class="table table-striped table-bordered">
                     <thead>
@@ -555,7 +555,7 @@
                 </div>
               </div>
             </div>
-            <!-- Trang xem danh mục -->
+            <!-- Trang xem chi tiết danh mục -->
             <div id="chitietdanhmuc">
               <div class="container">
                 <div class="row my-3 align-items-center">
@@ -597,13 +597,13 @@
                     </button>
                   </div>
                 </div>
-                <div class="row my-3 ms-4">
+                <div class="row my-3 ms-5 align-items-center">
                   <div class="col-2">Mã danh mục</div>
                   <div class="col-2"><span id="madanhmucmoi"></span></div>
                 </div>
-                <div class="row my-4 ms-4">
+                <div class="row my-3 ms-5 align-items-center">
                   <div class="col-2">Tên danh mục</div>
-                  <div class="col-1"><input class="form-control-sm" type="text"
+                  <div class="col-3"><input class="form-control" type="text"
                       id="tendanhmucmoi"></div>
                 </div>
                 <div class="row ms-5">
@@ -642,13 +642,13 @@
                     </button>
                   </div>
                 </div>
-                <div class="row my-3 ms-4">
+                <div class="row my-3 ms-5 align-items-center">
                   <div class="col-2">Mã danh mục</div>
                   <div class="col-2"><span id="madanhmucsua"></span></div>
                 </div>
-                <div class="row my-4 ms-4">
+                <div class="row my-3 ms-5 align-items-center">
                   <div class="col-2">Tên danh mục</div>
-                  <div class="col-1"><input class="form-control-sm" type="text"
+                  <div class="col-3"><input class="form-control" type="text"
                       id="tendanhmucsua"></div>
                 </div>
                 <div class="row ms-5">
@@ -693,19 +693,19 @@
                 </div>
                 <div class="row my-3">
                   <div class="col-6">
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Mã đồ uống</div>
                       <div class="col-8"><span id="madouong"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Tên đồ uống</div>
                       <div class="col-8"><span id="tendouong"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Giá bán</div>
                       <div class="col-8"><span id="giaban"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Nguyên liệu</div>
                       <div class="col-8">
                         <ul>
@@ -738,19 +738,19 @@
                 </div>
                 <div class="row my-3">
                   <div class="col-6">
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Mã đồ uống</div>
                       <div class="col-8"><span id="madouongmoi"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Tên đồ uống</div>
-                      <div class="col-8"><input class="form-control-sm"
+                      <div class="col-8"><input class="form-control"
                           type="text"
                           id="tendouongmoi"></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Giá bán</div>
-                      <div class="col-8"><input class="form-control-sm"
+                      <div class="col-8"><input class="form-control"
                           type="text"
                           id="giabanmoi"></div>
                     </div>
@@ -791,23 +791,23 @@
                 </div>
                 <div class="row my-3 mb-5">
                   <div class="col-6">
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Mã đồ uống</div>
                       <div class="col-8"><span id="madouongsua"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Tên đồ uống</div>
-                      <div class="col-8"><input class="form-control-sm"
+                      <div class="col-8"><input class="form-control"
                           type="text"
                           id="tendouongsua"></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Giá bán</div>
-                      <div class="col-8"><input class="form-control-sm"
+                      <div class="col-8"><input class="form-control"
                           type="text"
                           id="giabansua"></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Nguyên liệu</div>
                       <div class="col-8"><textarea class="form-control" rows="5"
                           name="text"></textarea></div>
@@ -844,31 +844,29 @@
                   </div>
                 </div>
                 <div class="row mt-3 ms-5">
-                  <span style="font-weight: bold;">Thông tin chi tiết nguyên
-                    liệu:
-                  </span>
+                  <span style="font-weight: bold;">Thông tin chi tiết nguyên liệu</span>
                 </div>
                 <div class="row my-3">
-                  <div class="col-6">
-                    <div class="row my-3 ms-5">
-                      <div class="col-4">Mã nguyên liệu</div>
-                      <div class="col-8"><span id="manguyenlieu"></span></div>
+                  <div class="col-5">
+                    <div class="row my-3 ms-5 align-items-center">
+                      <div class="col-5">Mã nguyên liệu</div>
+                      <div class="col-7"><span id="manguyenlieu"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
-                      <div class="col-4">Tên nguyên liệu</div>
-                      <div class="col-8"><span id="tennguyenlieu"></span></div>
+                    <div class="row my-3 ms-5 align-items-center">
+                      <div class="col-5">Tên nguyên liệu</div>
+                      <div class="col-7"><span id="tennguyenlieu"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
-                      <div class="col-4">Giá nhập vào</div>
-                      <div class="col-8"><span id="gianhap"></span></div>
+                    <div class="row my-3 ms-5 align-items-center">
+                      <div class="col-5">Giá nhập vào</div>
+                      <div class="col-7"><span id="gianhap"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
-                      <div class="col-4">Số lượng còn</div>
-                      <div class="col-8"><span id="soluong"></span></div>
+                    <div class="row my-3 ms-5 align-items-center">
+                      <div class="col-5">Số lượng còn</div>
+                      <div class="col-7"><span id="soluong"></span></div>
                     </div>
                   </div>
-                  <div class="col-6">
-                    <img class="my-3" style="width: 200px;" src="img/traden.jpg" alt>
+                  <div class="col-7">
+                    <img style="width: 300px;" src="img/traden.jpg" alt>
                   </div>
                 </div>
               </div>
@@ -884,41 +882,40 @@
                   </div>
                 </div>
                 <div class="row mt-3 ms-5">
-                  <span style="font-weight: bold;">Nhập thông tin nguyên liệu
-                    mới:
-                  </span>
+                  <span style="font-weight: bold;">Nhập thông tin nguyên liệu mới</span>
                 </div>
                 <div class="row my-3">
                   <div class="col-6">
-                    <div class="row mt-3 mb-4 ms-5">
+                    <div class="row mt-3 ms-5 align-items-center">
                       <div class="col-4">Mã nguyên liệu</div>
                       <div class="col-8"><span id="manguyenlieumoi"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Tên nguyên liệu</div>
                       <div class="col-8"><input type="text"
                           id="tennguyenlieumoi" class="form-control"></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Ngày nhập</div>
                       <div class="col-8"><input type="text"
                           id="ngaynhapmoi" class="form-control"></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Giá nhập vào</div>
                       <div class="col-8"><input type="text" id="gianhapmoi"
                           class="form-control"></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Số lượng còn</div>
                       <div class="col-8"><input type="text" id="soluongmoi"
                           class="form-control"></div>
                     </div>
                   </div>
                   <div class="col-6">
-                    <img class="my-3" src="img/image_demo.png" alt>
-                    <div class="row justify-content-center">
-                      <div class="col-12">
+                    <img style="width: 300px;" src="img/traden.jpg" alt>
+                    <div class="row mt-2">
+                      <div class="col-2"></div>
+                      <div class="col-4">
                         <button class="btn btn-outline-success">Tải ảnh lên
                           <span class="fas fa-arrow-up"></span></button>
                       </div>
@@ -929,7 +926,7 @@
                   <div class="col-4">
                     <button
                       class="btn_huy_nguyenlieu btn btn-secondary me-5">Hủy</button>
-                    <button id="btn_luu_nguyenlieu_sua" class="btn btn-success">Hoàn
+                    <button id="btn_luu_nguyenlieu" class="btn btn-success">Hoàn
                       tất</button>
                   </div>
                 </div>
@@ -947,36 +944,36 @@
                 </div>
                 <div class="row mt-3 ms-5">
                   <span style="font-weight: bold;">Nhập thông tin nguyên liệu
-                    mới:
                   </span>
                 </div>
                 <div class="row my-3">
                   <div class="col-6">
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Mã nguyên liệu</div>
                       <div class="col-8"><span
                           id="manguyenlieusua"></span></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Tên nguyên liệu</div>
                       <div class="col-8"><input type="text"
                           id="tennguyenlieusua" class="form-control"></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Giá nhập vào</div>
                       <div class="col-8"><input type="text" id="gianhapsua"
                           class="form-control"></div>
                     </div>
-                    <div class="row my-3 ms-5">
+                    <div class="row my-3 ms-5 align-items-center">
                       <div class="col-4">Số lượng còn</div>
                       <div class="col-8"><input type="text" id="soluongsua"
                           class="form-control"></div>
                     </div>
                   </div>
                   <div class="col-6">
-                    <img class="my-3" src="img/image_demo.png" alt>
-                    <div class="row justify-content-center">
-                      <div class="col-12">
+                    <img style="width: 300px;" src="img/traden.jpg" alt>
+                    <div class="row mt-2">
+                      <div class="col-2"></div>
+                      <div class="col-4">
                         <button class="btn btn-outline-success">Tải ảnh lên
                           <span class="fas fa-arrow-up"></span></button>
                       </div>
@@ -1002,29 +999,29 @@
                         class="fas fa-arrow-left-long"></span> Quay lại
                     </button>
                   </div>
-                </div>
-                <div class="row mt-3 ms-5">
-                  <span style="font-weight: bold;">Thông tin nhân viên
-                  </span>
-                </div>
+                </div>                
                 <div class="row my-3 ms-5">
+                  <div class="row mt-2 justify-content-center">
+                    <span style="font-weight: bold; text-align: center;">Thông tin nhân viên
+                    </span>
+                  </div>
                   <div class="col-3">
                     <img class="my-3" src="img/image_demo.png" alt>
                   </div>
                   <div class="col-9">
-                    <div class="row my-4 me-5">
+                    <div class="row my-4 me-5 align-items-center">
                       <div class="col-3">Mã nhân viên</div>
                       <div class="col-9"><span id="manhanvien"></span></div>
                     </div>
-                    <div class="row my-4 me-5">
+                    <div class="row my-4 me-5 align-items-center">
                       <div class="col-3">Tên nhân viên</div>
                       <div class="col-9"><span id="tennhanvien"></span></div>
                     </div>
-                    <div class="row my-4 me-5">
+                    <div class="row my-4 me-5 align-items-center">
                       <div class="col-3">Giới tính</div>
                       <div class="col-9"><span id="gioitinh">Nữ</span></div>
                     </div>
-                    <div class="row my-4 me-5">
+                    <div class="row my-4 me-5 align-items-center">
                       <div class="col-3">Năm sinh</div>
                       <div class="col-9"><span id="soluong">2003</span></div>
                     </div>
@@ -1041,36 +1038,42 @@
                         class="fas fa-arrow-left-long"></span> Quay lại
                     </button>
                   </div>
-                </div>
-                <div class="row mt-3 ms-5">
-                  <span style="font-weight: bold;">Nhập thông tin nhân viên
-                    mới:
-                  </span>
-                </div>
+                </div>                
                 <div class="row my-3 ms-5">
                   <div class="col-3">
                     <img class="my-3" src="img/image_demo.png" alt>
+                    <div class="row">
+                      <div class="col-1"></div>
+                      <div class="col-8 ms-3">
+                        <button class="btn btn-outline-success">Tải ảnh lên
+                          <span class="fas fa-arrow-up"></span></button>
+                      </div>
+                    </div>
                   </div>
                   <div class="col-9">
-                    <div class="row my-">
-                      <div class="col-3">Mã nhân viên</div>
-                      <div class="col-9"><span id="manhanvien"></span></div>
+                    <div class="row mt-3 ms-5">
+                      <span style="font-weight: bold; text-align: center;">Nhập thông tin nhân viên mới </span>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Tên nhân viên</div>
-                      <div class="col-9"><input type="text" id="tennhanvienmoi" class="form-control-sm"></span></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Mã nhân viên</div>
+                      <div class="col-9"><span id="manhanvienmoi"></div>
+                      <div class="col-1"></div>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Giới tính</div>
-                      <div class="col-9"><input type="text" id="gioitinhmoi" class="form-control-sm"></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Tên nhân viên</div>
+                      <div class="col-9"><input type="text" id="tennhanvienmoi" class="form-control"></span></div>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Năm sinh</div>
-                      <div class="col-9"><input type="text" id="namsinhmoi" class="form-control-sm"></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Giới tính</div>
+                      <div class="col-9"><input type="text" id="gioitinhmoi" class="form-control"></div>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Mức lương cơ bản</div>
-                      <div class="col-9"><input type="text" id="mucluongmoi" class="form-control-sm"></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Năm sinh</div>
+                      <div class="col-9"><input type="text" id="namsinhmoi" class="form-control"></div>
+                    </div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Mức lương cơ bản</div>
+                      <div class="col-9"><input type="text" id="mucluongmoi" class="form-control"></div>
                     </div>
                   </div>
                 </div>
@@ -1094,46 +1097,53 @@
                     </button>
                   </div>
                 </div>
-                <div class="row ms-5 mt-3">
-                  <span style="font-weight: bold;">Nhập thông tin nhân viên
-                  </span>
-                </div>
-                <div class="row my-3 ms-5">
+                <div class="row my-1 ms-5">                 
                   <div class="col-3">
-                    <img class="my-3" src="img/image_demo.png" alt>
+                    <img class="mt-5 mb-3" src="img/image_demo.png" alt>
+                    <div class="row">
+                      <div class="col-1"></div>
+                      <div class="col-8 ms-3">
+                        <button class="btn btn-outline-success">Tải ảnh lên
+                          <span class="fas fa-arrow-up"></span></button>
+                      </div>
+                    </div>
                   </div>
                   <div class="col-9">
-                    <div class="row my-3">
-                      <div class="col-3">Mã nhân viên</div>
-                      <div class="col-9"><span id="manhanvien"></span></div>
+                    <div class="row justify-content-center">
+                      <span style="font-weight: bold; text-align: center;">Nhập thông tin nhân viên</span>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Tên nhân viên</div>
-                      <div class="col-9"><input type="text" id="tennhanviensua" class="form-control-sm"></span></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Mã nhân viên</div>
+                      <div class="col-9"><span id="manhanviensua"></span></div>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Giới tính</div>
-                      <div class="col-9"><input type="text" id="gioitinhsua" class="form-control-sm"></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Tên nhân viên</div>
+                      <div class="col-9"><input type="text" id="tennhanviensua" class="form-control"></div>
+                      <div class="col-1"></div>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Năm sinh</div>
-                      <div class="col-9"><input type="text" id="namsinhsua" class="form-control-sm"></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Giới tính</div>
+                      <div class="col-9"><input type="text" id="gioitinhsua" class="form-control"></div>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Số ngày công</div>
-                      <div class="col-9"><input type="text" id="songaycongsua" class="form-control-sm"></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Năm sinh</div>
+                      <div class="col-9"><input type="text" id="namsinhsua" class="form-control"></div>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Số giờ tăng ca</div>
-                      <div class="col-9"><input type="text" id="sogiotangcasua" class="form-control-sm"></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Số ngày công</div>
+                      <div class="col-9"><input type="text" id="songaycongsua" class="form-control"></div>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Thưởng</div>
-                      <div class="col-9"><input type="text" id="thuongsua" class="form-control-sm"></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Số giờ tăng ca</div>
+                      <div class="col-9"><input type="text" id="sogiotangcasua" class="form-control"></div>
                     </div>
-                    <div class="row my-4">
-                      <div class="col-3">Phạt</div>
-                      <div class="col-9"><input type="text" id="phatsua" class="form-control-sm"></div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Thưởng</div>
+                      <div class="col-9"><input type="text" id="thuongsua" class="form-control"></div>
+                    </div>
+                    <div class="row my-3 align-items-center">
+                      <div class="col-2">Phạt</div>
+                      <div class="col-9"><input type="text" id="phatsua" class="form-control"></div>
                     </div>
                   </div>
                 </div>

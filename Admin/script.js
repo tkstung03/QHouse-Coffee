@@ -465,7 +465,7 @@ $(document).ready(function () {
     $("#suanguyenlieu").hide();
     $("#themnguyenlieu").hide();
   });
-  // btn lưu đồ uống
+  // btn lưu nguyenlieu
   $("#btn_luu_nguyenlieu").click(function () {
     // Lấy giá trị từng cột từ input hoặc các nguồn dữ liệu khác
     var tennguyenlieu = $("#tennguyenlieumoi").val();
@@ -538,7 +538,7 @@ $(document).ready(function () {
         currency: "VND",
       });
       row.find(".gianhap").text(giaNhapSauSuaFormatted);
-      var soluongSauSua = parseInt($("#soluong").val());
+      var soluongSauSua = $("#soluongsua").val();
       row.find(".soluong").text(soluongSauSua);
       $("#nguyenlieu").show();
       $("#suanguyenlieu").hide();
@@ -598,11 +598,8 @@ $(document).ready(function () {
   $("#btn_them_nhanvien").click(function () {
     $("#quanlynhanvien").hide();
     $("#themnhanvien").show();
-    var lastManhanvien = $(
-      "#table_quanlynhanvien tbody tr:last-child td:nth-child(2)"
-    ).text();
-    var newManhanvien =
-      "DU" + String(parseInt(lastManhanvien.substr(2)) + 1).padStart(3, "0");
+    var lastManhanvien = $("#table_quanlynhanvien tbody tr:last-child td:nth-child(2)").text();
+    var newManhanvien = "NV" + String(parseInt(lastManhanvien.substr(2)) + 1).padStart(2, "0");
     $("#manhanvienmoi").text(newManhanvien);
     $("#tennhanvienmoi").val("");
     $("#gioitinhmoi").val("");
@@ -627,7 +624,7 @@ $(document).ready(function () {
     // Lấy giá trị từng cột từ input hoặc các nguồn dữ liệu khác
     var tennhanvien = $("#tennhanvienmoi").val();
     var mucluongmoi = parseInt($("#mucluongmoi").val());
-    var mucluongFormatted = mucluong.toLocaleString("it-IT", {
+    var mucluongFormatted = mucluongmoi.toLocaleString("it-IT", {
       style: "currency",
       currency: "VND",
     });
@@ -760,6 +757,96 @@ $(document).ready(function () {
     window.history.pushState({}, '', '../Admin/notfound.html');
     window.location.href = "../Login/login.html";
     });
-    
+
+  $("#btn_danhmuc").on('click', function(){
+    $("#danhmuc").show();
+    $("#themdanhmuc").hide();
+    $("#suadanhmuc").hide();
+    $("#chitietdanhmuc").hide();
+    $("#chitietdouong").hide();
+    $("#suadouong").hide();
+    $("#themdouong").hide();
+    $("#chitietnguyenlieu").hide();
+    $("#suanguyenlieu").hide();
+    $("#themnguyenlieu").hide();
+    $("#chitietnhanvien").hide();
+    $("#suanhanvien").hide();
+    $("#themnhanvien").hide();
+  });
+  $("#btn_douong").on('click', function(){
+    $("#douong").show();
+    $("#themdanhmuc").hide();
+    $("#suadanhmuc").hide();
+    $("#chitietdanhmuc").hide();
+    $("#chitietdouong").hide();
+    $("#suadouong").hide();
+    $("#themdouong").hide();
+    $("#chitietnguyenlieu").hide();
+    $("#suanguyenlieu").hide();
+    $("#themnguyenlieu").hide();
+    $("#chitietnhanvien").hide();
+    $("#suanhanvien").hide();
+    $("#themnhanvien").hide();
+  });
+  $("#btn_hoadon").on('click', function(){
+    $("#hoadon").show();
+    $("#themdanhmuc").hide();
+    $("#suadanhmuc").hide();
+    $("#chitietdanhmuc").hide();
+    $("#chitietdouong").hide();
+    $("#suadouong").hide();
+    $("#themdouong").hide();
+    $("#chitietnguyenlieu").hide();
+    $("#suanguyenlieu").hide();
+    $("#themnguyenlieu").hide();
+    $("#chitietnhanvien").hide();
+    $("#suanhanvien").hide();
+    $("#themnhanvien").hide();
+  });  
+  $("#btn_nguyenlieu").on('click', function(){
+    $("#nguyenlieu").show();
+    $("#themdanhmuc").hide();
+    $("#suadanhmuc").hide();
+    $("#chitietdanhmuc").hide();
+    $("#chitietdouong").hide();
+    $("#suadouong").hide();
+    $("#themdouong").hide();
+    $("#chitietnguyenlieu").hide();
+    $("#suanguyenlieu").hide();
+    $("#themnguyenlieu").hide();
+    $("#chitietnhanvien").hide();
+    $("#suanhanvien").hide();
+    $("#themnhanvien").hide();
+  });
+  $("#btn_thongkedoanhthu").on('click', function(){
+    $("#thongkedoanhthu").show();
+    $("#themdanhmuc").hide();
+    $("#suadanhmuc").hide();
+    $("#chitietdanhmuc").hide();
+    $("#chitietdouong").hide();
+    $("#suadouong").hide();
+    $("#themdouong").hide();
+    $("#chitietnguyenlieu").hide();
+    $("#suanguyenlieu").hide();
+    $("#themnguyenlieu").hide();
+    $("#chitietnhanvien").hide();
+    $("#suanhanvien").hide();
+    $("#themnhanvien").hide();
+  }); 
+  $("#btn_quanlynhanvien").on('click', function(){
+    $("#quanlynhanvien").show();
+    $("#themdanhmuc").hide();
+    $("#suadanhmuc").hide();
+    $("#chitietdanhmuc").hide();
+    $("#chitietdouong").hide();
+    $("#suadouong").hide();
+    $("#themdouong").hide();
+    $("#chitietnguyenlieu").hide();
+    $("#suanguyenlieu").hide();
+    $("#themnguyenlieu").hide();
+    $("#chitietnhanvien").hide();
+    $("#suanhanvien").hide();
+    $("#themnhanvien").hide();
+  });
 
 });
